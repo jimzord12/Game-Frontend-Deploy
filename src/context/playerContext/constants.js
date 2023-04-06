@@ -34,6 +34,8 @@ const NameToImgMapping = {
   Techstore: Techstore,
 };
 
+const cardsWithStats = [13];
+
 // ⏰ Time related constants ⏰
 const day = 1 * 24 * 60 * 60 * 1000;
 const hour = 60 * 60 * 1000;
@@ -66,4 +68,5 @@ export {
   apiEndpointCards,
   apiEndpointPlayerCards,
   apiEndpointLatestId,
+  cardsWithStats,
 };
