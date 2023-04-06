@@ -1,0 +1,1 @@
+ethers react-draggable react-modal react-parallax-tilt react-router-dom react-tooltip web3modal @material-ui/core @material-ui/icons

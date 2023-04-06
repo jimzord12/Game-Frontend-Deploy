@@ -1,0 +1,21 @@
+{
+  "playerId": 1,
+  "name": "Dude",
+  "wallet": "0x1232..2345",
+  "townId": 1,
+  "islandId": 1,
+  "townHallLevel": 2,
+  "timestamp": 1679399921000,
+  "resources": {
+    "gold": 75000,
+    "population": 92,
+    "concrete": 50000,
+    "metals": 50000,
+    "crystals": 50000
+  },
+  "workers": {
+    "concrete": 0,
+    "metals": 0,
+    "crystals": 0
+  }
+}

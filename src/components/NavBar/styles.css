@@ -1,0 +1,25 @@
+.injected-svg {
+  width: 18px;
+  height: auto;
+}
+
+@media only screen and (min-width: 360px) {
+  .injected-svg {
+    width: 20px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 440px) {
+  .injected-svg {
+    width: 24px;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 660px) {
+  .injected-svg {
+    width: 32px;
+    height: auto;
+  }
+}

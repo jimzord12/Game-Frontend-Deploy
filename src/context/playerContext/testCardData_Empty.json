@@ -1,0 +1,131 @@
+[
+  {
+    "id": 123,
+    "templateId": 1,
+    "rarity": 3,
+    "level": 5,
+    "state": true,
+    "disabled": false,
+    "owner": "wallet01",
+    "creationTime": 0,
+    "creator": "ChatGPT-4"
+  },
+  {
+    "id": 1234,
+    "templateId": 1,
+    "rarity": 4,
+    "level": 5,
+    "state": true,
+    "disabled": false,
+    "owner": "wallet012",
+    "creationTime": 100000,
+    "creator": "ChatGPT-4"
+  },
+  {
+    "id": 12345,
+    "templateId": 1,
+    "rarity": 3,
+    "level": 5,
+    "state": true,
+    "disabled": false,
+    "owner": "wallet01",
+    "creationTime": 0,
+    "creator": "ChatGPT-4"
+  },
+  {
+    "id": 12346,
+    "templateId": 1,
+    "rarity": 3,
+    "level": 5,
+    "state": true,
+    "disabled": false,
+    "owner": "wallet01",
+    "creationTime": 0,
+    "creator": "ChatGPT-4"
+  },
+  {
+    "id": 1351,
+    "templateId": 13,
+    "rarity": 1,
+    "level": 3,
+    "state": true,
+    "disabled": false,
+    "owner": "someonesWallet",
+    "stats": {
+      "goldToolLvl": 2,
+      "concreteToolLvl": 3,
+      "metalsToolLvl": 0,
+      "crystalsToolLvl": 1
+    },
+    "creationTime": 2111616000000,
+    "creator": "ChatGPT-4"
+  },
+  {
+    "id": 1352,
+    "templateId": 13,
+    "rarity": 1,
+    "level": 3,
+    "state": true,
+    "disabled": false,
+    "owner": "someonesWallet",
+    "stats": {
+      "goldToolLvl": 2,
+      "concreteToolLvl": 3,
+      "metalsToolLvl": 0,
+      "crystalsToolLvl": 1
+    },
+    "creationTime": 2111616000000,
+    "creator": "ChatGPT-4"
+  },
+  {
+    "id": 1353,
+    "templateId": 13,
+    "rarity": 1,
+    "level": 3,
+    "state": true,
+    "disabled": false,
+    "owner": "someonesWallet",
+    "stats": {
+      "goldToolLvl": 2,
+      "concreteToolLvl": 3,
+      "metalsToolLvl": 0,
+      "crystalsToolLvl": 1
+    },
+    "creationTime": 2111616000000,
+    "creator": "ChatGPT-4"
+  },
+  {
+    "id": 1354,
+    "templateId": 13,
+    "rarity": 1,
+    "level": 3,
+    "state": true,
+    "disabled": false,
+    "owner": "someonesWallet",
+    "stats": {
+      "goldToolLvl": 2,
+      "concreteToolLvl": 3,
+      "metalsToolLvl": 0,
+      "crystalsToolLvl": 1
+    },
+    "creationTime": 2111616000000,
+    "creator": "ChatGPT-4"
+  },
+  {
+    "id": 1355,
+    "templateId": 13,
+    "rarity": 1,
+    "level": 3,
+    "state": true,
+    "disabled": false,
+    "owner": "someonesWallet",
+    "stats": {
+      "goldToolLvl": 2,
+      "concreteToolLvl": 3,
+      "metalsToolLvl": 0,
+      "crystalsToolLvl": 1
+    },
+    "creationTime": 2111616000000,
+    "creator": "ChatGPT-4"
+  }
+]

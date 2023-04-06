@@ -1,0 +1,56 @@
+{
+  "townHall": {
+    "level": 1
+  },
+  "inventory": {
+    "reg": [],
+    "buildings": [],
+    "special": []
+  },
+  "active": {
+    "reg": [
+      {
+        "id": 1,
+        "templateId": 1,
+        "rarity": 3,
+        "level": 3,
+        "state": false,
+        "locked": true,
+        "owner": "wallet01"
+      }
+    ],
+    "buildings": [
+      {
+        "id": 13,
+        "templateId": 13,
+        "rarity": 5,
+        "level": 4,
+        "state": true,
+        "locked": true,
+        "owner": "someonesWallet",
+        "stats": {
+          "goldMultiLvl": 2,
+          "concreteMultiLvl": 3,
+          "metalsMultiLvl": 1,
+          "crystalsMultiLvl": 1
+        }
+      }
+    ],
+    "special": [
+      {
+        "id": 7,
+        "templateId": 7,
+        "name": "Workaholism",
+        "type": "Special Effect",
+        "desc": "25% Resource Gathering",
+        "rarity": 1,
+        "level": 4,
+        "state": false,
+        "locked": true,
+        "img": "some-image.png",
+        "requirements": {},
+        "output": {}
+      }
+    ]
+  }
+}

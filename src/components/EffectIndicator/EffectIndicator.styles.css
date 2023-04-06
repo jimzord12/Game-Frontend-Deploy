@@ -1,0 +1,108 @@
+.duration-effect {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  overflow: hidden; /* Add this line to hide the image outside the circle */
+  border-radius: 50%;
+}
+
+.background-image {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.glass-circle {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  backdrop-filter: blur(1.5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-shadow: #fc0 4px 0 6px;
+  font-size: 24px;
+  font-weight: 500;
+  z-index: 2;
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.35s;
+}
+
+[data-tooltip-id='my-tooltip'].__react_component_tooltip {
+  white-space: pre-wrap;
+}
+
+/* .tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: red;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 24px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s;
+  z-index: 100000000;
+} */
+
+/* .duration-effect:hover .tooltip {
+  opacity: 1;
+} */
+
+@media only screen and (min-width: 480px) {
+  .duration-effect {
+    width: 90px;
+    height: 90px;
+  }
+
+  .background-image {
+    width: 75px;
+    height: 75px;
+  }
+
+  .glass-circle {
+    width: 75px;
+    height: 75px;
+  }
+
+  .tooltip {
+    opacity: 1;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .duration-effect {
+    width: 120px;
+    height: 120px;
+  }
+
+  .background-image {
+    width: 105px;
+    height: 105px;
+  }
+
+  .glass-circle {
+    width: 105px;
+    height: 105px;
+  }
+}

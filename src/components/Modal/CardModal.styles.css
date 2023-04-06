@@ -1,0 +1,287 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap);
+
+:root {
+  --dark: #101315;
+  --light: #f2eeee;
+  --gradient: linear-gradient(10deg, #ffaa00, #ff6a00);
+  --gradient2: linear-gradient(15deg, #04ea00, #00d17d);
+  --gradient3: linear-gradient(15deg, #b648ff, #ef5dff);
+  font-size: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  padding: 40px 16px;
+  background: #000000e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+  z-index: 401;
+  overflow: scroll;
+}
+
+.card-modal {
+  width: clamp(60%, 900px, 90%);
+  height: fit-content;
+  margin: auto;
+  padding: 0 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 402;
+  /* background-color: #00d17d; */
+  background-color: #00a764;
+}
+
+.card-modal-text > h3 {
+  text-align: center;
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 2rem 0 0 0;
+  margin: 0;
+  text-transform: capitalize;
+  z-index: 401;
+}
+
+.card-modal-divider {
+  margin-bottom: 12px;
+}
+
+.card-modal-text > h5 {
+  text-align: center;
+  color: var(--light);
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: justify;
+  letter-spacing: 0;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  line-height: 125%;
+  margin: 0;
+  margin-bottom: 28px;
+  z-index: 401;
+}
+
+.card-modal-content {
+  display: flex;
+  width: 100%;
+  padding: 12px 12px;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.1rem;
+  /* border: 1px solid #080808; */
+  box-shadow: 0px 0px 4px 1px black;
+  border-radius: 6px;
+  background: var(--gradient2); /* fallback for old browsers */
+}
+
+.card-modal-button {
+  position: relative;
+  bottom: 1.5rem;
+  padding: 0 3rem;
+  min-height: 3rem;
+  margin: auto auto 0 auto;
+  margin-top: 36px;
+  background: var(--dark);
+  color: var(--light);
+  width: auto;
+  height: 3rem;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 1.25px;
+  cursor: default;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 402;
+}
+
+@media only screen and (max-width: 360px) {
+  .card-modal-text > h5 {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .card-modal-divider {
+    max-width: 450px;
+    margin: auto;
+    margin-bottom: 12px;
+  }
+}
+
+/* The Card inside the modal Styles */
+
+@media only screen and (max-width: 420px) {
+  .card-modal {
+    width: 100%;
+    padding: 0 8px;
+  }
+  .backdrop {
+    padding: 0px;
+  }
+  .card-modal-content {
+    padding: 0px 12px;
+    /* padding: 12px 8px; */
+  }
+  .card.card-modal-single-card {
+    width: 220px;
+    height: 290px;
+  }
+
+  .card-image.card-modal-single-card {
+    width: 130px;
+  }
+
+  /* .card-modal-single-card-desc > h3 {
+    font-size: x-large;
+  }
+
+  .card-modal-single-card-li {
+    font-size: x-large;
+  } */
+}
+@media only screen and (min-width: 421px) {
+  .card.card-modal-single-card {
+    width: 210px;
+    height: 320px;
+  }
+
+  .card-image.card-modal-single-card {
+    width: 130px;
+  }
+
+  .card-modal-single-card-desc > h3 {
+    font-size: x-large;
+  }
+
+  .card-modal-single-card-li {
+    font-size: x-large;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  .card-modal-single-card-li {
+    text-indent: 64px;
+    padding-right: 64px;
+  }
+}
+
+@media only screen and (min-width: 520px) {
+  .card-modal-single-card-li {
+    text-indent: 96px;
+    padding-right: 96px;
+  }
+}
+
+@media only screen and (min-width: 620px) {
+  .card-modal-single-card-li {
+    text-indent: 128px;
+    padding-right: 128px;
+  }
+}
+
+@media only screen and (min-width: 740px) {
+  .card-modal-single-card-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .vertical-divider {
+    display: none;
+  }
+
+  .card-modal-single-card-li {
+    text-indent: 24px;
+    padding-right: 32px;
+  }
+
+  .card-modal-single-card-desc {
+    border-radius: 25px;
+    border: 3px solid whitesmoke;
+    padding: 20px;
+    box-shadow: 1px 2px 3px black;
+    background: #22c1c3;
+    background: -webkit-radial-gradient(#fdbb2d, #22c1c3);
+    background: radial-gradient(#fdbb2d, #22c1c3);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .card-modal-single-card-container {
+    margin-top: 0px;
+    align-items: baseline;
+    justify-content: center;
+  }
+
+  .card.card-modal-single-card {
+    width: 260px;
+    height: 400px;
+  }
+
+  .card-modal-single-card-btn-container {
+    /* margin: top right bottom left */
+    margin: 12px 36px 10px 8px;
+    justify-content: space-around;
+    align-self: stretch;
+    background-color: #22c1c3;
+    border-radius: 15px;
+    border: 5px solid #dfdbdb;
+    box-shadow: 2px 4px 4px 0px black;
+  }
+
+  .card-name.card-modal-single-card {
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 2px black;
+  }
+
+  .card-type-container.card-modal-single-card {
+    font-size: 1.2rem;
+    margin: 10px 5px;
+  }
+
+  .card-level-container.card-modal-single-card {
+    font-size: 1.2rem;
+    margin: 5px 5px;
+  }
+
+  .card-level.card-modal-single-card {
+    margin: 6px 15px;
+  }
+
+  .card-image.card-modal-single-card {
+    width: 180px;
+  }
+
+  .card-description.card-modal-single-card {
+    font-size: 1.2rem;
+  }
+
+  .card-modal-single-card-desc {
+    margin-top: 20px;
+  }
+
+  .card-modal-single-card-desc > h3 {
+    font-size: 2.2rem;
+  }
+
+  .card-modal-single-card-li {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,117 @@
+"filename", "language", "JavaScript", "XML", "JavaScript JSX", "Markdown", "CSS", "JSON", "comment", "blank", "total"
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\App.jsx", "JavaScript JSX", 0, 0, 25, 0, 0, 0, 4, 4, 33
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\assets\AlertIcon.jsx", "JavaScript JSX", 0, 0, 20, 0, 0, 0, 0, 4, 24
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\assets\alertIcon.svg", "XML", 0, 1, 0, 0, 0, 0, 0, 0, 1
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\assets\index.js", "JavaScript", 138, 0, 0, 0, 0, 0, 12, 11, 161
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\assets\logo.svg", "XML", 0, 1, 0, 0, 0, 0, 0, 0, 1
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Alert.jsx", "JavaScript JSX", 0, 0, 0, 0, 0, 0, 13, 4, 17
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Backdrop\Backdrop.jsx", "JavaScript JSX", 0, 0, 23, 0, 0, 0, 2, 3, 28
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Backdrop\Backdrop.styles.css", "CSS", 0, 0, 0, 0, 240, 0, 21, 34, 295
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardGrid\CardGrid.jsx", "JavaScript JSX", 0, 0, 441, 0, 0, 0, 58, 44, 543
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardGrid\styles.css", "CSS", 0, 0, 0, 0, 204, 0, 15, 40, 259
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardGrid\utils.js", "JavaScript", 3, 0, 0, 0, 0, 0, 0, 1, 4
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardManager\CardManager.jsx", "JavaScript JSX", 0, 0, 193, 0, 0, 0, 0, 14, 207
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardManager\CardManagerCraft.jsx", "JavaScript JSX", 0, 0, 55, 0, 0, 0, 145, 14, 214
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardManager\styles.css", "CSS", 0, 0, 0, 0, 96, 0, 19, 20, 135
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Card\Card.jsx", "JavaScript JSX", 0, 0, 80, 0, 0, 0, 31, 13, 124
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Card\OldCard.jsx", "JavaScript JSX", 0, 0, 35, 0, 0, 0, 0, 8, 43
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Card\SimpleImgCard.jsx", "JavaScript JSX", 0, 0, 14, 0, 0, 0, 0, 4, 18
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Card\simpleImgCard.css", "CSS", 0, 0, 0, 0, 91, 0, 1, 17, 109
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\CyberRestaurantActionMenu.jsx", "JavaScript JSX", 0, 0, 5, 0, 0, 0, 0, 3, 8
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\CyberRestaurantActionMenu.styles.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 1, 1
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\CyberTechStoreActionMenu.jsx", "JavaScript JSX", 0, 0, 520, 0, 0, 0, 74, 32, 626
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\CyberTechStoreActionMenu.styles.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 1, 1
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\TownHallActionMenu\THAMCategory\THAMCategory.jsx", "JavaScript JSX", 0, 0, 61, 0, 0, 0, 3, 7, 71
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\TownHallActionMenu\THAMCategory\THAM_Item.jsx", "JavaScript JSX", 0, 0, 21, 0, 0, 0, 1, 4, 26
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\TownHallActionMenu\THAMCategory\townHallActionMenuStyles.js", "JavaScript", 37, 0, 0, 0, 0, 0, 11, 2, 50
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\TownHallActionMenu\TownHallActionMenu.jsx", "JavaScript JSX", 0, 0, 762, 0, 0, 0, 176, 72, 1010
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\TownHallActionMenu\TownHallActionMenu.styles.css", "CSS", 0, 0, 0, 0, 10, 0, 0, 2, 12
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\TownHallActionMenu\townHallActionMenuStyles.js", "JavaScript", 37, 0, 0, 0, 0, 0, 11, 2, 50
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\Buildings\TownHallActionMenu\utilityFunctions.js", "JavaScript", 31, 0, 0, 0, 0, 0, 24, 11, 66
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\CardActionMenu.jsx", "JavaScript JSX", 0, 0, 336, 0, 0, 0, 77, 32, 445
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\CardActionMenu.styles.css", "CSS", 0, 0, 0, 0, 32, 0, 30, 7, 69
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\CardOnMap.jsx", "JavaScript JSX", 0, 0, 32, 0, 0, 0, 9, 6, 47
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\CardOnMap.styles.css", "CSS", 0, 0, 0, 0, 43, 0, 72, 6, 121
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\CardsCluster.jsx", "JavaScript JSX", 0, 0, 78, 0, 0, 0, 39, 20, 137
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\CardsCluster.styles.css", "CSS", 0, 0, 0, 0, 21, 0, 8, 4, 33
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\REGs\WindTurbineActionMenu.jsx", "JavaScript JSX", 0, 0, 219, 0, 0, 0, 8, 16, 243
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\REGs\WindTurbineActionMenu.styles.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 1, 1
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\SE\WorkaholismActiomMenu.jsx", "JavaScript JSX", 0, 0, 6, 0, 0, 0, 0, 3, 9
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CardsOnMapManger\SE\WorkaholismActiomMenu.styles.css", "CSS", 0, 0, 0, 0, 0, 0, 0, 1, 1
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CatButton\CatButton.jsx", "JavaScript JSX", 0, 0, 30, 0, 0, 0, 0, 3, 33
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\CatButton\CatButton.styles.css", "CSS", 0, 0, 0, 0, 93, 0, 2, 11, 106
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\GameBtn\GameBtn.jsx", "JavaScript JSX", 0, 0, 41, 0, 0, 0, 3, 7, 51
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\GameBtn\styles.css", "CSS", 0, 0, 0, 0, 33, 0, 6, 1, 40
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\GameView\GameInfo.jsx", "JavaScript JSX", 0, 0, 95, 0, 0, 0, 14, 15, 124
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Inventory\InventoryModal.jsx", "JavaScript JSX", 0, 0, 82, 0, 0, 0, 2, 5, 89
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Inventory\InventoryModalList.jsx", "JavaScript JSX", 0, 0, 60, 0, 0, 0, 3, 3, 66
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Inventory\LabDraggableModal.jsx", "JavaScript JSX", 0, 0, 102, 0, 0, 0, 50, 11, 163
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Inventory\Modal.jsx", "JavaScript JSX", 0, 0, 147, 0, 0, 0, 30, 13, 190
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Modal\CardModal.jsx", "JavaScript JSX", 0, 0, 114, 0, 0, 0, 48, 20, 182
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Modal\CardModal.styles.css", "CSS", 0, 0, 0, 0, 239, 0, 12, 37, 288
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Modal\CustomModal_Craft.jsx", "JavaScript JSX", 0, 0, 277, 0, 0, 0, 186, 35, 498
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Modal\CustomModal_Inv.jsx", "JavaScript JSX", 0, 0, 154, 0, 0, 0, 35, 17, 206
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Modal\Secondary.styles.css", "CSS", 0, 0, 0, 0, 123, 0, 6, 15, 144
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Modal\SecondaryModal.jsx", "JavaScript JSX", 0, 0, 87, 0, 0, 0, 3, 9, 99
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Modal\customModal.jsx", "JavaScript JSX", 0, 0, 122, 0, 0, 0, 7, 6, 135
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Modal\styles.css", "CSS", 0, 0, 0, 0, 465, 0, 46, 74, 585
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\NavBar\MiniTopBarV2.jsx", "JavaScript JSX", 0, 0, 321, 0, 0, 0, 80, 52, 453
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\NavBar\MuiNavbar.jsx", "JavaScript JSX", 0, 0, 195, 0, 0, 0, 22, 14, 231
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\NavBar\concreteIcon.svg", "XML", 0, 41, 0, 0, 0, 0, 1, 0, 42
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\NavBar\styles.css", "CSS", 0, 0, 0, 0, 22, 0, 0, 4, 26
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\PageHOC.jsx", "JavaScript JSX", 0, 0, 36, 0, 0, 0, 42, 14, 92
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\PlayerInfo_REACT_TOOLTIP.jsx", "JavaScript JSX", 0, 0, 64, 0, 0, 0, 0, 8, 72
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\SimpleCustom\CustomButton.jsx", "JavaScript JSX", 0, 0, 14, 0, 0, 0, 0, 4, 18
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\SimpleCustom\CustomInput.jsx", "JavaScript JSX", 0, 0, 23, 0, 0, 0, 0, 5, 28
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\SimpleCustom\index.js", "JavaScript", 3, 0, 0, 0, 0, 0, 0, 2, 5
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\SpeedDial\SpeedDial.jsx", "JavaScript JSX", 0, 0, 69, 0, 0, 0, 30, 13, 112
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\Web3\OnboardModal.jsx", "JavaScript JSX", 0, 0, 88, 0, 0, 0, 2, 14, 104
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\WorldMap\IslandSpecs.jsx", "JavaScript JSX", 0, 0, 76, 0, 0, 0, 1, 6, 83
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\WorldMap\WorldMap.jsx", "JavaScript JSX", 0, 0, 213, 0, 0, 0, 20, 26, 259
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\WorldMap\islandSpecs.styles.css", "CSS", 0, 0, 0, 0, 6, 0, 0, 1, 7
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\anotherBtn\AnotherBtn.jsx", "JavaScript JSX", 0, 0, 12, 0, 0, 0, 1, 3, 16
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\components\anotherBtn\AnotherBtn.styles.css", "CSS", 0, 0, 0, 0, 26, 0, 4, 2, 32
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\cardDescriptions.json", "JSON", 0, 0, 0, 0, 0, 14, 0, 1, 15
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\createEventListeners.js", "JavaScript", 0, 0, 0, 0, 0, 0, 2, 1, 3
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\index.jsx", "JavaScript JSX", 0, 0, 456, 0, 0, 0, 16, 15, 487
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\PlayerContext newCopy.jsx", "JavaScript JSX", 0, 0, 260, 0, 0, 0, 59, 49, 368
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\PlayerContext oldCopy.jsx", "JavaScript JSX", 0, 0, 239, 0, 0, 0, 48, 44, 331
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\PlayerContext.jsx", "JavaScript JSX", 0, 0, 791, 0, 0, 0, 263, 110, 1164
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\Sequense.md", "Markdown", 0, 0, 0, 8, 0, 0, 0, 1, 9
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\helperFunctions.js", "JavaScript", 118, 0, 0, 0, 0, 0, 61, 26, 205
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\testCardData copy.json", "JSON", 0, 0, 0, 0, 0, 81, 0, 1, 82
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\testCardData.js", "JavaScript", 382, 0, 0, 0, 0, 0, 0, 2, 384
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\testCardData.json", "JSON", 0, 0, 0, 0, 0, 133, 0, 1, 134
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\testCardTemplateData.json", "JSON", 0, 0, 0, 0, 0, 66, 0, 1, 67
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\testPlayerData.json", "JSON", 0, 0, 0, 0, 0, 18, 0, 1, 19
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\context\playerContext\utilityFunctions.js", "JavaScript", 41, 0, 0, 0, 0, 0, 5, 9, 55
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\hooks\useCardModal.jsx", "JavaScript JSX", 0, 0, 9, 0, 0, 0, 1, 6, 16
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\hooks\useSecondaryModal.jsx", "JavaScript JSX", 0, 0, 9, 0, 0, 0, 1, 6, 16
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\index.css", "CSS", 0, 0, 0, 0, 243, 0, 21, 20, 284
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\main.jsx", "JavaScript JSX", 0, 0, 9, 0, 0, 0, 0, 3, 12
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Classes\classBuilding.js", "JavaScript", 56, 0, 0, 0, 0, 0, 15, 7, 78
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Classes\classCard_Craft.js", "JavaScript", 13, 0, 0, 0, 0, 0, 158, 3, 174
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Classes\classCard_Old.js", "JavaScript", 124, 0, 0, 0, 0, 0, 40, 21, 185
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Classes\classCard_V2.js", "JavaScript", 196, 0, 0, 0, 0, 0, 95, 32, 323
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Classes\classPlayer.js", "JavaScript", 351, 0, 0, 0, 0, 0, 163, 49, 563
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Classes\classREG.js", "JavaScript", 8, 0, 0, 0, 0, 0, 6, 3, 17
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Classes\classSP.js", "JavaScript", 50, 0, 0, 0, 0, 0, 27, 18, 95
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Classes\index.js", "JavaScript", 14, 0, 0, 0, 0, 0, 0, 2, 16
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Classes\playerAPI.md", "Markdown", 0, 0, 0, 38, 0, 0, 0, 8, 46
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Factories\cardFactory copy.js", "JavaScript", 83, 0, 0, 0, 0, 0, 18, 22, 123
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Factories\cardFactory.js", "JavaScript", 31, 0, 0, 0, 0, 0, 8, 6, 45
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Factories\index.js", "JavaScript", 3, 0, 0, 0, 0, 0, 0, 2, 5
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\models\Factories\playerFactory.js", "JavaScript", 58, 0, 0, 0, 0, 0, 7, 4, 69
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\myAssets\index.js", "JavaScript", 21, 0, 0, 0, 0, 0, 5, 3, 29
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\myAssets\mapCardRepresentationImages\index.js", "JavaScript", 5, 0, 0, 0, 0, 0, 0, 2, 7
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\myAssets\maps\index.js", "JavaScript", 12, 0, 0, 0, 0, 0, 1, 3, 16
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\myAssets\maps\mapSelection\index.js", "JavaScript", 4, 0, 0, 0, 0, 0, 1, 2, 7
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\pages\Battle.jsx", "JavaScript JSX", 0, 0, 157, 0, 0, 0, 63, 36, 256
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\pages\Battleground.jsx", "JavaScript JSX", 0, 0, 43, 0, 0, 0, 4, 11, 58
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\pages\Home.jsx", "JavaScript JSX", 0, 0, 30, 0, 0, 0, 29, 8, 67
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\pages\index.js", "JavaScript", 4, 0, 0, 0, 0, 0, 0, 2, 6
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\styles\index.js", "JavaScript", 86, 0, 0, 0, 0, 0, 32, 19, 137
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\utils\Onboard.js", "JavaScript", 103, 0, 0, 0, 0, 0, 1, 17, 121
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\utils\index.js", "JavaScript", 2, 0, 0, 0, 0, 0, 0, 2, 4
+"f:\Programming\GENERA\Game\JavaScript_Edition_Current\js-vite-react-game\src\utils\secondsToDaysHrsMinSec.js", "JavaScript", 12, 0, 0, 0, 0, 0, 0, 2, 14
+"Total", "-", 2026, 43, 7351, 46, 1987, 312, 2670, 1499, 15934

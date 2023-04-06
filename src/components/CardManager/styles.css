@@ -1,0 +1,134 @@
+.card-manager {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding-top: 24px;
+}
+
+.card-manager-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* margin-right: 20px; */
+  margin-bottom: 10px;
+  flex-shrink: 1;
+}
+
+.card-manager-field:last-child {
+  margin-right: 0;
+  flex-shrink: 1;
+}
+
+.card-manager-field label {
+  margin-bottom: 5px;
+}
+
+.span-header {
+  font-size: large;
+  padding-left: 8px;
+  font-weight: 600;
+}
+
+.card-manager-field input[type='text'] {
+  border-radius: 5px;
+  font-size: x-large;
+  border: 2px solid steelblue;
+}
+
+/* .card-manager-field label input[type='radio'] {
+  margin-right: 5px;
+} */
+
+/* .card-manager-field label input[type='radio']:last-child {
+  margin-right: 0;
+} */
+
+.card-manager-field label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+input[type='radio'] {
+  margin-right: 6px;
+  transform: scale(1.3);
+}
+/* li {
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 8px;
+  padding-left: 12px;
+  border-top: 3px solid #ccc;
+  font-size: large;
+  color: blue;
+} */
+
+@media only screen and (max-width: 319px) {
+  .card-manager {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+  }
+
+  .card-manager-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* margin-right: 20px; */
+    /* margin-bottom: 10px; */
+    flex-shrink: 1;
+    margin-bottom: 0;
+  }
+
+  .card-manager-field label {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 32px;
+    padding-bottom: 16px;
+    margin-bottom: 0;
+  }
+
+  .span-header {
+    font-size: large;
+    padding-left: 8px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .card-manager {
+    font-size: large;
+  }
+
+  .span-header {
+    font-size: x-large;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .card-manager {
+    font-size: large;
+  }
+
+  .span-header {
+    font-size: x-large;
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (min-width: 1050px) {
+  .card-manager {
+    font-size: x-large;
+  }
+
+  .span-header {
+    font-size: xx-large;
+    margin-bottom: 0px;
+  }
+}

@@ -1,0 +1,108 @@
+.craft-card-typeSelection-container {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.craft-card {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.craft-card .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #00ff4c;
+  font-size: 2.75rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px black;
+}
+
+.craft-card.text:nth-child(1) {
+  /* font-size: 3.5rem; NOT WORKING */
+}
+
+.craft-card:nth-child(3) {
+  height: 300px;
+  width: 200px;
+}
+
+.craft-card img {
+  filter: blur(1.3px);
+  border-radius: 10px;
+}
+
+.craft-card:hover {
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.7);
+  transform: scale(1.05);
+}
+
+@media only screen and (min-width: 360px) {
+  .craft-card {
+    height: 80%;
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .craft-card .text {
+    font-size: 3.5rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .craft-card-typeSelection-container {
+    margin-top: 75px;
+    flex-direction: row;
+    padding: 16px 12px;
+  }
+
+  .craft-card {
+    border-radius: 10px;
+    height: 300px;
+    width: 300px;
+  }
+
+  .craft-card:hover {
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+    border: 2px solid black;
+  }
+
+  .craft-card:nth-child(2) {
+    border-radius: 100%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .craft-card {
+    height: 250px;
+    width: 250px;
+  }
+
+  .craft-card-typeSelection-container {
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .craft-card-typeSelection-container > .craft-card {
+    height: 360px;
+    width: 360px;
+  }
+
+  .craft-card:nth-child(3) {
+    height: 390px;
+    width: 260px;
+  }
+}

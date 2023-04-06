@@ -1,0 +1,143 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap);
+
+:root {
+  --dark: #101315;
+  --light: #f2eeee;
+  --gradient: linear-gradient(10deg, #ffaa00, #ff6a00);
+  --gradient2: linear-gradient(15deg, #04ea00, #00d17d);
+  --gradient3: linear-gradient(15deg, #b648ff, #ef5dff);
+  font-size: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 40px 16px;
+  background: #000000e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+  z-index: 401;
+  overflow: scroll;
+}
+
+.secondary-modal {
+  width: clamp(60%, 900px, 90%);
+  height: fit-content;
+  margin: auto;
+  padding: 0 2rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 402;
+  /* background-color: #00d17d; */
+  background-color: #00a764;
+}
+
+.secondary-modal-text > h3 {
+  text-align: center;
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 2rem 0 0 0;
+  margin: 0;
+  text-transform: capitalize;
+  z-index: 401;
+}
+
+.secondary-modal-divider {
+  margin-bottom: 12px;
+}
+
+.secondary-modal-text > h5 {
+  text-align: center;
+  color: var(--light);
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: justify;
+  letter-spacing: 0;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  line-height: 125%;
+  margin: 0;
+  margin-bottom: 28px;
+  z-index: 401;
+}
+
+.secondary-modal-content {
+  /* display: flex; */
+  /* flex-flow: row wrap; */
+  /* justify-content: space-around; */
+  /* align-items: center; */
+  /* gap: 0.5rem;  */
+  width: 100%;
+  box-shadow: 0px 0px 4px 1px black;
+  border-radius: 6px;
+  padding: 12px 12px;
+  background: var(--gradient2);
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  grid-gap: 10px;
+}
+
+.secondary-modal-button {
+  position: relative;
+  bottom: 1.5rem;
+  padding: 0 3rem;
+  min-height: 3rem;
+  margin: auto auto 0 auto;
+  margin-top: 36px;
+  background: var(--dark);
+  color: var(--light);
+  width: auto;
+  height: 3rem;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 1.25px;
+  cursor: default;
+  font-family: 'Montserrat', sans-serif;
+  z-index: 402;
+}
+
+@media only screen and (max-width: 460px) {
+  .secondary-modal-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .secondary-modal-text > h5 {
+    text-align: center;
+    font-size: 0.85rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .secondary-modal-content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+  }
+
+  .secondary-modal-divider {
+    max-width: 450px;
+    margin: auto;
+    margin-bottom: 12px;
+  }
+}

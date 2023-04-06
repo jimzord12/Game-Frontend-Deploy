@@ -1,0 +1,71 @@
+{
+  "0": {
+    "name": "Town's Hall",
+    "type": "Building",
+    "img": "TownHall",
+    "requirements": {},
+    "output": {}
+  },
+  "1": {
+    "name": "Wind Turbine",
+    "type": "REG",
+    "desc": "Provides Energy ⚡ ",
+    "img": "WindTurbine",
+    "baseMaintenance": {
+      "gold": 50
+    },
+    "baseRequirements": {
+      "gold": 750,
+      "concrete": 520,
+      "metals": 400,
+      "crystals": 150
+    },
+    "baseOutput": {
+      "energy": 70
+    }
+  },
+  "7": {
+    "name": "Workaholism",
+    "type": "Special Effect",
+    "desc": "??% Resource Gathering",
+    "img": "Workaholism",
+    "baseRequirements": {
+      "gold": 2500,
+      "concrete": 350,
+      "metals": 250,
+      "crystals": 500
+    },
+    "baseOutput": {
+      "boost": 0.25
+    },
+    "affectsRates": {
+      "concrete": true,
+      "metals": true,
+      "crystals": true
+    }
+  },
+  "13": {
+    "name": "Cyber TechStore",
+    "type": "Building",
+    "desc": "Enchancing Gathering",
+    "img": "Techstore",
+    "baseMaintenance": {
+      "energy": 30
+    },
+    "baseRequirements": {
+      "gold": 500,
+      "concrete": 650,
+      "metals": 780,
+      "crystals": 260
+    },
+    "baseStats": {
+      "gold": 0,
+      "concrete": 0,
+      "metals": 0,
+      "crystals": 0
+    },
+    "baseOutput": {
+      "boost": 0.1
+    }
+  }
+}
