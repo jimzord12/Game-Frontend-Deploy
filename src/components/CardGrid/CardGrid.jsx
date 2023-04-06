@@ -20,6 +20,7 @@ import {
   getLastestId,
   createCard_API,
   updateCardData,
+  uploadCardStats,
 } from '../../../api/apiFns';
 
 //@Note: These images imports are all over the place! When refactoring, find a way to centralize them.
@@ -32,6 +33,10 @@ import {
 import WindTurbine_V2 from '../../myAssets/cardImages/windTurbine.png';
 import workaholismImg from '../../myAssets/temp/workaholism.png';
 import { randNumber4Testing } from '../../context/playerContext/utilityFunctions';
+import {
+  NameToImgMapping,
+  cardsWithStats,
+} from '../../context/playerContext/constants.js';
 
 function isFloat(x) {
   // check if the passed value is a number
@@ -61,11 +66,11 @@ const rarityCoverter = (rarityNumber) => {
   console.error('😱 Something Wrong at: Card.jsx, in: rarityCoverter()');
 };
 
-const NameToImgMapping = {
-  WindTurbine: WindTurbine_V2,
-  Workaholism: workaholismImg,
-  Techstore: Techstore,
-};
+// const NameToImgMapping = {
+//   WindTurbine: WindTurbine_V2,
+//   Workaholism: workaholismImg,
+//   Techstore: Techstore,
+// };
 
 export default function CardGrid(props) {
   const {
@@ -111,6 +116,26 @@ export default function CardGrid(props) {
     },
   });
 
+  const {
+    mutate: createCardStats_DB,
+    // data: newCardId,
+    // isSuccess: isSuccessNewCard,
+  } = useMutation({
+    mutationFn: uploadCardStats,
+    // enabled: isSuccessNewCard,
+    onError: () => {
+      console.error(
+        '😫 Something went wrong!!! While creating the new card STATS!'
+      );
+    },
+    onSuccess: (newCardStats) => {
+      console.log('Here is the new Card STATS: ', newCardStats);
+
+      // Invalidate and refetch
+      // queryClient.invalidateQueries({ queryKey: ['todos'] });
+    },
+  });
+
   useEffect(() => {
     console.log(
       'CardGrid: UseEffect() Number of Activated Cards: ',
@@ -125,6 +150,19 @@ export default function CardGrid(props) {
       const newCard = newCard_2;
       newCard.image = NameToImgMapping[newCard.img];
       newCard.id = newCardId.id;
+      if (cardsWithStats.includes(newCard.templateId)) {
+        createCardStats_DB({
+          cardId: newCard.id,
+          gold: 0,
+          concrete: 0,
+          metals: 0,
+          crystals: 0,
+          population: 0,
+          energy: 0,
+          rank: 0,
+          expenses: 0,
+        });
+      }
       setInventoryCards((prev) => [...prev, newCard]); // (3)
       setForceRerender((prev) => !prev);
       console.log('CardGrid::UseEffect() Complete New Card: ', newCard);
@@ -253,7 +291,8 @@ export default function CardGrid(props) {
             creator: fetchedPlayer.name,
           });
         } else {
-          const { templateId, level, state, rarity, creationTime } = newCard;
+          const { templateId, level, state, rarity, creationTime, stats } =
+            newCard;
           createCard_DB({
             templateId,
             level,
