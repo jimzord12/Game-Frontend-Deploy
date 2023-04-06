@@ -16,7 +16,8 @@ import CatButton from '../CatButton/CatButton.jsx';
 import IslandSpecs from './IslandSpecs.jsx';
 
 import icon from 'leaflet/dist/images/marker-icon.png';
-import iconRed from 'leaflet/dist/images/marker-icon-red.png';
+// import iconRed from 'leaflet/dist/images/marker-icon-red.png';
+import redMarker from '../../myAssets/marker-icon-red.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import { BsPeopleFill } from 'react-icons/bs';
 import { BsPersonBadgeFill } from 'react-icons/bs';
@@ -35,7 +36,7 @@ const DefaultIcon = L.icon({
 });
 
 const playerMarker = L.icon({
-  iconUrl: iconRed,
+  iconUrl: redMarker,
   shadowUrl: iconShadow,
   iconSize: [25, 41],
   iconAnchor: [12, 41],
