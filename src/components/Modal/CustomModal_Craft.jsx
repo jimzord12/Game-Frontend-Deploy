@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import CardGrid from '../CardGrid/CardGrid.jsx';
 import CardManagerCraft from '../CardManager/CardManagerCraft.jsx';
 import SimpleImgCard from '../Card/SimpleImgCard.jsx';
-import Building from '../../myAssets/craftModalImgs/Building.jpg';
+import Building from '../../myAssets/craftModalImgs/building.jpg';
 import REG from '../../myAssets/craftModalImgs/REG.png';
 import SE_Card from '../../myAssets/craftModalImgs/SE_Card.png';
 import './styles.css';
