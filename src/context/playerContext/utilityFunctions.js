@@ -127,7 +127,7 @@ export function mysqlDatetimeToUnixTimestamp(mysqlDatetime) {
 
 export function needCatchUp(previousDate, currentDate) {
   // If New Player, no need to catch up
-  if (convertedPrevDate === null || convertedPrevDate === 0) return false;
+  if (previousDate === null || previousDate === 0) return false;
 
   const convertedPrevDate = mysqlDatetimeToUnixTimestamp(previousDate) / 1000;
   const diff = Math.abs(currentDate - convertedPrevDate);
