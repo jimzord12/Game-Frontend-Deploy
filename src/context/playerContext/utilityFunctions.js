@@ -104,10 +104,22 @@ export function convertToMySQLDatetime(timestamp) {
   return `${yyyy}-${mm}-${dd} ${hh}:${mi}:${ss}`;
 }
 
+// export function mysqlDatetimeToUnixTimestamp(mysqlDatetime) {
+//   const date = new Date(mysqlDatetime);
+//   console.log('jhiunnnnnvgbgv: ', date.getTime());
+//   return date.getTime() * 1000;
+// }
+
 export function mysqlDatetimeToUnixTimestamp(mysqlDatetime) {
-  const date = new Date(mysqlDatetime);
+  const [datePart, timePart] = mysqlDatetime.split(' ');
+
+  const [year, month, day] = datePart.split('-').map(Number);
+  const [hours, minutes, seconds] = timePart.split(':').map(Number);
+
+  const date = new Date(year, month - 1, day, hours, minutes, seconds);
+
   console.log('jhiunnnnnvgbgv: ', date.getTime());
-  return date.getTime() * 1000;
+  return date.getTime();
 }
 
 export function needCatchUp(previousDate, currentDate) {
