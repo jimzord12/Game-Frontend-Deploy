@@ -118,6 +118,8 @@ const EffectIndicator = ({
 
   const [initComplete, setInitComplete] = useState(false);
 
+  console.log('Effect Indicator::isEffectActive: ', effectRef);
+
   // const elapsedPercentage = useMemo(() => {
   //   return calculateElapsedPercentage(
   //     startDateInMilliseconds,

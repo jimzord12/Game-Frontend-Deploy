@@ -105,10 +105,7 @@ function MiniTopBarV2(playerData) {
     ranking: roundToDecimal(nonMaterialResourcesRef.current.rank, 0),
   });
 
-  // const [isEffectActive, setIsEffectActive] = useState(null);
-  const [isEffectActive, setIsEffectActive] = useState(
-    specialEffectsRef.current.isEffectActive
-  );
+  const [isEffectActive, setIsEffectActive] = useState(null);
 
   const [durationLeft, setDurationLeft] = useState(null);
 
@@ -148,11 +145,11 @@ function MiniTopBarV2(playerData) {
 
   useEffect(() => {
     // if (waitForGameLoop) {
-    // setIsEffectActive((prev) =>
-    //   prev === specialEffectsRef.current.isEffectActive
-    //     ? prev
-    //     : specialEffectsRef.current.isEffectActive
-    // );
+    setIsEffectActive((prev) =>
+      prev === specialEffectsRef.current.isEffectActive
+        ? prev
+        : specialEffectsRef.current.isEffectActive
+    );
     setDurationLeft((prev) =>
       prev === specialEffectsRef.current.endDate
         ? prev
@@ -491,7 +488,7 @@ function MiniTopBarV2(playerData) {
         </Box>
       )}
       <Box sx={getstylesEI()}>
-        {true && (
+        {isEffectActive && (
           <EffectIndicator
             duration={durationLeft}
             image={workaholismImg}
