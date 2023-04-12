@@ -490,10 +490,11 @@ function MiniTopBarV2(playerData) {
       <Box sx={getstylesEI()}>
         {isEffectActive && (
           <EffectIndicator
-            duration={durationLeft}
+            // duration={durationLeft}
+            // duration={effectDuration}
             image={workaholismImg}
             isEffectActive={isEffectActive}
-            tooltipText={'SUKA!!!'}
+            tooltipText={'test!!!'}
             effectRef={specialEffectsRef}
           />
         )}

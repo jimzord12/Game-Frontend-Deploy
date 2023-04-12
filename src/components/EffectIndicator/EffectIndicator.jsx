@@ -98,6 +98,14 @@ const EffectIndicator = ({
     console.log('Effect Indicator:: isActive : ', isEffectActive);
     console.log('Effect Indicator:: Efefct Ref : ', effectRef);
     console.log('Effect Indicator:: CurrentDate : ', currentDateInMilliseconds);
+    console.log(
+      'Effect Indicator:: (Date) - CurrentDate : ',
+      formatDate(currentDateInMilliseconds)
+    );
+    console.log(
+      'Effect Indicator:: (Date) - StartDate : ',
+      formatDate(startDateInMilliseconds)
+    );
     console.log('Effect Indicator:: StartDate : ', startDateInMilliseconds);
     console.log('Effect Indicator:: ElapsedTime : ', elapsedTimeInMilliseconds);
     console.log(
