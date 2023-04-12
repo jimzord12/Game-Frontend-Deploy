@@ -105,6 +105,7 @@ export function convertToMySQLDatetime(timestamp) {
 }
 
 export function mysqlDatetimeToUnixTimestamp(mysqlDatetime) {
+  console.log('mysqlDatetimeToUnixTimestamp::Input => ', mysqlDatetime);
   const localDatetime = mysqlDatetime.slice(0, 19);
   const date = new Date(localDatetime);
   console.log('jhiunnnnnvgbgv: ', date.getTime());
