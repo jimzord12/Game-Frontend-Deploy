@@ -339,7 +339,7 @@ export default function CardGrid(props) {
     if (testCardTemplateData[_templateId].name === 'Workaholism') {
       return {
         isEffectActive: true,
-        // endDate: 1679833229000, // @Important!: Very bad naming! Startedat is the correct one!!!
+        // endDate: 1679833229000, // @Important!: Very bad naming! StartDate is the correct one!!!
         endDate: Date.now(),
         goldGathRate: 1,
         popGrowthRate: 1,
