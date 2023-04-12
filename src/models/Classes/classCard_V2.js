@@ -257,10 +257,13 @@ export default class Card {
 
   #unixConverter(mysqlDatetime) {
     if (mysqlDatetime === null || mysqlDatetime === undefined) return 0;
-    const date = new Date(mysqlDatetime);
+    const localDatetime = mysqlDatetime.slice(0, 19);
+    const date = new Date(localDatetime);
+
     console.log('(1) - UnixConverter: ', mysqlDatetime);
-    console.log('(2) - UnixConverter: ', date);
-    console.log('(3) - UnixConverter: ', date.getTime());
+    console.log('(2) - UnixConverter: ', localDatetime);
+    console.log('(3) - UnixConverter: ', date);
+    console.log('(4) - UnixConverter: ', date.getTime());
     // return Math.floor(date.getTime() / 1000);
     return date.getTime();
   }
