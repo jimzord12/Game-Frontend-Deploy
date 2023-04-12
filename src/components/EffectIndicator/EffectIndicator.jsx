@@ -95,15 +95,15 @@ const EffectIndicator = ({
       currentDateInMilliseconds - startDateInMilliseconds;
     const elapsedPercentage =
       (elapsedTimeInMilliseconds / durationInMilliseconds) * 100;
-    // console.log('Effect Indicator:: isActive : ', isEffectActive);
-    // console.log('Effect Indicator:: Efefct Ref : ', effectRef);
-    // console.log('Effect Indicator:: CurrentDate : ', currentDateInMilliseconds);
-    // console.log('Effect Indicator:: StaetDate : ', startDateInMilliseconds);
-    // console.log('Effect Indicator:: ElapsedTime : ', elapsedTimeInMilliseconds);
-    // console.log(
-    //   'Effect Indicator:: ElapsedTime (%) : ',
-    //   roundToDecimal(elapsedPercentage, 4)
-    // );
+    console.log('Effect Indicator:: isActive : ', isEffectActive);
+    console.log('Effect Indicator:: Efefct Ref : ', effectRef);
+    console.log('Effect Indicator:: CurrentDate : ', currentDateInMilliseconds);
+    console.log('Effect Indicator:: StartDate : ', startDateInMilliseconds);
+    console.log('Effect Indicator:: ElapsedTime : ', elapsedTimeInMilliseconds);
+    console.log(
+      'Effect Indicator:: ElapsedTime (%) : ',
+      roundToDecimal(elapsedPercentage, 4)
+    );
     return roundToDecimal(elapsedPercentage, 2);
   };
 
