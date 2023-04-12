@@ -202,7 +202,7 @@ const EffectIndicator = ({
           >
             {console.log('1 - EffectIndicator::Degub => ', hasEffectExpired)}
             {console.log('2 - EffectIndicator::Degub => ', isEffectActive)}
-            {hasEffectExpired && isEffectActive && (
+            {!hasEffectExpired && isEffectActive && (
               <>
                 <img
                   src={image}
