@@ -95,23 +95,23 @@ const EffectIndicator = ({
       currentDateInMilliseconds - startDateInMilliseconds;
     const elapsedPercentage =
       (elapsedTimeInMilliseconds / durationInMilliseconds) * 100;
-    console.log('Effect Indicator:: isActive : ', isEffectActive);
-    console.log('Effect Indicator:: Efefct Ref : ', effectRef);
-    console.log('Effect Indicator:: CurrentDate : ', currentDateInMilliseconds);
-    console.log(
-      'Effect Indicator:: (Date) - CurrentDate : ',
-      formatDate(currentDateInMilliseconds)
-    );
-    console.log(
-      'Effect Indicator:: (Date) - StartDate : ',
-      formatDate(startDateInMilliseconds)
-    );
-    console.log('Effect Indicator:: StartDate : ', startDateInMilliseconds);
-    console.log('Effect Indicator:: ElapsedTime : ', elapsedTimeInMilliseconds);
-    console.log(
-      'Effect Indicator:: ElapsedTime (%) : ',
-      roundToDecimal(elapsedPercentage, 4)
-    );
+    // console.log('Effect Indicator:: isActive : ', isEffectActive);
+    // console.log('Effect Indicator:: Efefct Ref : ', effectRef);
+    // console.log('Effect Indicator:: CurrentDate : ', currentDateInMilliseconds);
+    // console.log(
+    //   'Effect Indicator:: (Date) - CurrentDate : ',
+    //   formatDate(currentDateInMilliseconds)
+    // );
+    // console.log(
+    //   'Effect Indicator:: (Date) - StartDate : ',
+    //   formatDate(startDateInMilliseconds)
+    // );
+    // console.log('Effect Indicator:: StartDate : ', startDateInMilliseconds);
+    // console.log('Effect Indicator:: ElapsedTime : ', elapsedTimeInMilliseconds);
+    // console.log(
+    //   'Effect Indicator:: ElapsedTime (%) : ',
+    //   roundToDecimal(elapsedPercentage, 4)
+    // );
     return roundToDecimal(elapsedPercentage, 2);
   };
 
@@ -200,8 +200,6 @@ const EffectIndicator = ({
             // data-for="my-tooltip"
             // data-tooltip-content={`Concrete: 35%\nConcrete: 35%\nConcrete: 35%`}
           >
-            {console.log('1 - EffectIndicator::Degub => ', hasEffectExpired)}
-            {console.log('2 - EffectIndicator::Degub => ', isEffectActive)}
             {!hasEffectExpired && isEffectActive && (
               <>
                 <img
