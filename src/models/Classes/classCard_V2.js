@@ -260,7 +260,8 @@ export default class Card {
     const date = new Date(mysqlDatetime);
     console.log('(1) - UnixConverter: ', mysqlDatetime);
     console.log('(2) - UnixConverter: ', date);
-    console.log('(3) - UnixConverter: ', date);
-    return Math.floor(date.getTime() / 1000);
+    console.log('(3) - UnixConverter: ', date.getTime());
+    // return Math.floor(date.getTime() / 1000);
+    return date.getTime();
   }
 }

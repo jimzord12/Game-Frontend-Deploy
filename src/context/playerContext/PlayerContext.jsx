@@ -1115,7 +1115,7 @@ export function PlayerContextProvider({ children }) {
         specialEffectsRef.current = {
           isEffectActive: true,
           // endDate: 1679833229000, // @Important!: Very bad naming! Startedat is the correct one!!!
-          endDate: mysqlDatetimeToUnixTimestamp(jsCard.endDate),
+          endDate: jsCard.endDate,
           goldGathRate: 1,
           popGrowthRate: 1,
           concreteGathRate: boost,
