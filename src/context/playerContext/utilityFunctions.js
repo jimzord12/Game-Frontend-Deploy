@@ -126,14 +126,15 @@ export function mysqlDatetimeToUnixTimestamp(mysqlDatetime) {
 // }
 
 export function needCatchUp(previousDate, currentDate) {
+  // If New Player, no need to catch up
+  if (convertedPrevDate === null || convertedPrevDate === 0) return false;
+
   const convertedPrevDate = mysqlDatetimeToUnixTimestamp(previousDate) / 1000;
   const diff = Math.abs(currentDate - convertedPrevDate);
   console.log('Player Last Known Login Timestamp: ', convertedPrevDate);
   console.log('Current Date (Now): ', currentDate);
   console.log('Their Difference: ', diff);
 
-  // If New Player, no need to catch up
-  if (convertedPrevDate === null || convertedPrevDate === 0) return false;
   if (diff > 900000) {
     // 15 mins
     console.log('Catch Up is required!');
