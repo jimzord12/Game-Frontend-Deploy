@@ -76,12 +76,12 @@ const EffectIndicator = ({
   effectRef,
 }) => {
   const { effectDuration, fakeDate, gatheringRatesRef } = usePlayerContext();
-  const [startDateInMilliseconds, setStartDateInMilliseconds] = useState(
-    effectRef.current.endDate
-  );
-  const [currentDateInMilliseconds, setCurrentDateInMilliseconds] = useState(
-    Date.now()
-  );
+  // const [startDateInMilliseconds, setStartDateInMilliseconds] = useState(
+  //   effectRef.current.endDate
+  // );
+  // const [currentDateInMilliseconds, setCurrentDateInMilliseconds] = useState(
+  //   Date.now()
+  // );
   const [rerender, setRerender] = useState(false);
 
   const calculateElapsedPercentage = (
@@ -117,8 +117,10 @@ const EffectIndicator = ({
 
   const [progress, setProgress] = useState(
     calculateElapsedPercentage(
-      startDateInMilliseconds,
-      currentDateInMilliseconds,
+      effectRef.current.endDate,
+      // startDateInMilliseconds,
+      Date.now(),
+      // currentDateInMilliseconds,
       effectDuration
     )
   );
