@@ -190,6 +190,8 @@ const EffectIndicator = ({
             // data-for="my-tooltip"
             // data-tooltip-content={`Concrete: 35%\nConcrete: 35%\nConcrete: 35%`}
           >
+            {console.log('1 - EffectIndicator::Degub => ', hasEffectExpired)}
+            {console.log('2 - EffectIndicator::Degub => ', isEffectActive)}
             {!hasEffectExpired && isEffectActive && (
               <>
                 <img
