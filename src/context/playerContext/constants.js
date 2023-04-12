@@ -15,10 +15,10 @@ const startingGeneratorsSpace = 2; // Max Generators Limit
 
 const startingPop = 30;
 const startingResources = {
-  gold: 1500,
-  concrete: 1000,
-  metals: 500,
-  crystals: 200,
+  gold: 100000,
+  concrete: 50000,
+  metals: 30000,
+  crystals: 25000,
 };
 
 const baseMultis = {
