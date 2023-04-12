@@ -491,7 +491,7 @@ function MiniTopBarV2(playerData) {
         </Box>
       )}
       <Box sx={getstylesEI()}>
-        {isEffectActive && (
+        {true && (
           <EffectIndicator
             duration={durationLeft}
             image={workaholismImg}
