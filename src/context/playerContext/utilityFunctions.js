@@ -111,6 +111,7 @@ export function convertToMySQLDatetime(timestamp) {
 // }
 
 export function mysqlDatetimeToUnixTimestamp(mysqlDatetime) {
+  console.log('mysqlDatetimeToUnixTimestamp ==> ', mysqlDatetime);
   const [datePart, timePart] = mysqlDatetime.split(' ');
 
   const [year, month, day] = datePart.split('-').map(Number);
