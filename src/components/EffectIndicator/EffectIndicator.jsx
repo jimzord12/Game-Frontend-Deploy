@@ -164,7 +164,7 @@ const EffectIndicator = ({
       //   setCurrentDateInMilliseconds(Date.now());
       // }
 
-      setCurrentDateInMilliseconds(Date.now());
+      // setCurrentDateInMilliseconds(Date.now());
     }, 500);
 
     setInitComplete(true);
