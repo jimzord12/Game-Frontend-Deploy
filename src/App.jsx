@@ -12,7 +12,7 @@ import { AuthProvider } from './context/AuthProvider';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
-import { Battleground, Battle, Home } from './pages';
+import { Battleground, Battle, Home, Leaderboard } from './pages';
 
 const queryClient = new QueryClient();
 
@@ -32,7 +32,8 @@ function App() {
                     <Route path="/battleground" element={<Battleground />} />
                     {/* <Route path="/battle/:battleName" element={<Battle />} />
                      */}
-                    <Route path="/battle/" element={<Battle />} />
+                    <Route path="/battle" element={<Battle />} />
+                    <Route path="/leaderboard" element={<Leaderboard />} />
                   </Routes>
                 </PlayerContextProvider>
               </GlobalContextProvider>

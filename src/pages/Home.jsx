@@ -6,6 +6,7 @@ import PageHOC from '../components/PageHOC';
 import useAuth from '../hooks/useAuth';
 import useInput from '../hooks/useInput';
 
+import { useMediaQuery } from '@mui/material';
 import axios from '../../api/api';
 // import { usePlayerContext } from '../context/playerContext/PlayerContext';
 import { usePlayerContext } from '../context/playerContext/PlayerContext.jsx';
@@ -29,6 +30,8 @@ export function Home() {
   const [errMsg, setErrMsg] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
   const [isNameTaken, setIsNameTaken] = useState(false);
+
+  const smallDev = useMediaQuery('(max-width: 640px)');
 
   const handlePlayerLogin = async (e) => {
     e.preventDefault();
@@ -186,7 +189,7 @@ export function Home() {
 
   const errorStyles = {
     backgroundColor: 'lightpink',
-    maxWidth: '50%',
+    maxWidth: smallDev ? '100%' : '50%',
     borderRadius: '6px',
     color: 'red',
     fontWeight: 'bold',
@@ -196,7 +199,7 @@ export function Home() {
 
   const successStyles = {
     backgroundColor: 'lightgreen',
-    maxWidth: '50%',
+    maxWidth: smallDev ? '100%' : '50%',
     borderRadius: '6px',
     color: 'green',
     fontWeight: 'bold',
@@ -224,7 +227,7 @@ export function Home() {
         Your Account has been created!
         <br /> Login to start playing! 🥳
         <br /> - (1) Enter only your Player Name
-        <br /> - (2) Click "Log in"
+        <br /> {`- (2) Click "Log in"`}
       </p>
 
       <CustomInput
@@ -269,6 +272,6 @@ export default PageHOC(
   </>,
   <>
     Connect your wallet to start playing <br />
-    To Login, enter your Player Name and click "Log in" <br />
+    {`To Login, enter your Player Name and click "Log in"`} <br />
   </>
 );

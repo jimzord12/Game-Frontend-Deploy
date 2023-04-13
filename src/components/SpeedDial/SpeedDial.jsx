@@ -22,12 +22,14 @@ import HandymanIcon from '@mui/icons-material/Handyman'; //Craft Icon Good
 import WebStoriesIcon from '@mui/icons-material/WebStories';
 
 import GpsFixedIcon from '@mui/icons-material/GpsFixed'; //Maps Icon Good
+import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 const actions = [
   { icon: <HandymanIcon />, name: 'Craft' },
   { icon: <StoreIcon />, name: 'Marketplace' },
   { icon: <WebStoriesIcon />, name: 'Inventory' },
   { icon: <GpsFixedIcon />, name: 'Maps' },
+  { icon: <EmojiEventsIcon />, name: 'Leaderboard' },
 ];
 
 export default function ControlledOpenSpeedDial({
@@ -65,6 +67,13 @@ export default function ControlledOpenSpeedDial({
       navigate('/battleground');
     } else {
       // console.log(actionName);
+    }
+
+    if (actionName === 'Leaderboard') {
+      // cb(true);
+      navigate('/leaderboard');
+    } else {
+      console.log(actionName);
     }
   };
   //   const handleOpen = () => setOpen(true);

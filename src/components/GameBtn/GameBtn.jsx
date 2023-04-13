@@ -47,6 +47,13 @@ export default function GameBtn({ text, action, callback }) {
     } else {
       console.log(actionName);
     }
+
+    if (actionName === 'Leaderboard') {
+      // cb(true);
+      navigate('/leaderboard');
+    } else {
+      console.log(actionName);
+    }
   };
 
   return (

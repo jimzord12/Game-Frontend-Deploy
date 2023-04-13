@@ -25,6 +25,15 @@ export const getPlayer = async ({ queryKey }) => {
   return response.data;
 };
 
+// #1.1 - Gets the Player's Data
+export const getAllPlayers = async ({ queryKey }) => {
+  const endpoint = 'players';
+  console.log('GET (All Players for Leaderboard) queryKey: ', queryKey);
+
+  const response = await axiosPrivate.get(`/${endpoint}`);
+  return response.data;
+};
+
 // #2 - Gets a Player's Cards
 export const getPlayerCards = async ({ queryKey }) => {
   const [endpoint, playerId, axiosPrivate] = queryKey;

@@ -250,6 +250,18 @@ function Battle() {
           >
             <GameBtn text={'Marketplace'} action="Marketplace" ripple active />
           </div>
+
+          <div
+            style={{
+              position: 'fixed',
+              top: '18rem',
+              right: '2rem',
+              display: isLargeScreen ? 'block' : 'none',
+              zIndex: 1,
+            }}
+          >
+            <GameBtn text={'Leaderboard'} action="Leaderboard" ripple active />
+          </div>
         </>
       )}
     </div>
