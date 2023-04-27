@@ -34,12 +34,14 @@ export default class Card {
    * @param {{}} dataObj The Specifications for creating a Card instance.
    */
   constructor(dataObj, templateData, newCard = false) {
-    if (dataObj.id === 24)
-      console.log('Class_V2::Data Object constructor: ', dataObj);
+    console.log('Class_V2::Data Object constructor: ', dataObj);
+    console.log('Class_V2::Data templateData: ', templateData);
     // These 3 properties exists in all Card
     this.id = dataObj.id; // This is UNIQUE, to match the NFT AND also an Array!!!
     this.templateId = dataObj.templateId; // NOT unique, for eg: 2 Wind Turbine Cards will have the same templateId
     this.rarity = dataObj.rarity;
+    this.priceTag = dataObj?.priceTag;
+    this.forSale = !!dataObj?.in_mp;
 
     if (newCard) {
       this.creationTime = Date.now();
@@ -128,6 +130,7 @@ export default class Card {
         console.log('The Newly Created Card!: ', this);
       }
     }
+    console.log('The Created Card!: ', this);
   }
 
   /*
@@ -224,6 +227,7 @@ export default class Card {
 
   // For Calc Requirements (Buildings & REGs)
   #updateObjectValuesV2(baseValueObject) {
+    console.log('Base Requirements: ', baseValueObject);
     const updatedVersion = {};
     const multiplier =
       Number(this.#levelReqMulti[`${this.level}`]) -
@@ -237,6 +241,8 @@ export default class Card {
         );
       }
     }
+    console.log('Updated Requirements: ', updatedVersion);
+
     return updatedVersion;
   }
 

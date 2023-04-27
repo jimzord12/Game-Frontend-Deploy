@@ -72,23 +72,6 @@ export const getEverything = async ({ queryKey }) => {
   const response = await axiosPublic.get(`/${endpoint}`);
   return response.data;
 };
-// export const getEverything = async ({ queryKey }) => {
-//   const [endpoint, playerId, axiosPrivate] = queryKey;
-//   console.log('GET (Cards) queryKey: ', queryKey);
-//   const ownerId = playerId;
-//   console.log('GET (Cards) Owner ID: ', ownerId);
-
-//   if (axiosPrivate) {
-//     if (ownerId) {
-//       const response = await axiosPrivate.get(`/${endpoint}/${ownerId}`);
-//       return response.data;
-//     }
-//     const response = await axiosPrivate.get(`/${endpoint}`);
-//     return response.data;
-//   }
-//   const response = await axiosPublic.get(`/${endpoint}`);
-//   return response.data;
-// };
 
 // #3 - Get Latest ID
 export const getLastestId = async ({ queryKey }) => {
@@ -102,13 +85,6 @@ export const getLastestId = async ({ queryKey }) => {
     }
   }
 };
-
-// export const getCardById = async ({ queryKey }) => {
-//   const [endpoint, cardId] = queryKey;
-//   console.log('POST (Create Card) Card Object: ', variables);
-//   const response = await axiosPrivate.get(`/${endpoint}/${cardId}`);
-//   return response.data;
-// };
 
 // MUTATIONS - POST
 
@@ -179,4 +155,69 @@ export const updateCardStatsData = async (variables) => {
   console.error(
     '😫 APi-Fns::updateCardData => Got No Variables from useMutation'
   );
+};
+
+// Marketplace API
+
+export const getAllCardsForSale = async ({ queryKey }) => {
+  const endpoint = 'cards/marketplace';
+  console.log('GET (All Cards for Sale) queryKey: ', queryKey);
+  // const [, axiosPrivate] = queryKey;
+
+  const response = await axiosPrivate.get(`/${endpoint}`);
+  return response.data;
+};
+
+export const purchaseCard = async ({ queryKey }) => {
+  const endpoint = 'marketplace';
+  console.log('POST (Create Purchase Event Entry Marketplace): ', queryKey);
+  const [, , queryProps] = queryKey;
+
+  const response = await axiosPrivate.post(`/${endpoint}`, queryProps);
+
+  return response.data;
+};
+
+export const deletePurchase = async ({ _axiosPrivate, cardId }) => {
+  const endpoint = 'marketplace';
+  // const [, axiosPrivate, sellerId] = queryKey;
+  console.log('DELETE (Purchase Events Entry): ', cardId);
+  const response = await axiosPrivate.delete(`/${endpoint}`, {
+    data: { cardId },
+  });
+  return response.data;
+};
+
+export const removeFromMP = async ({ _axiosPrivate, cardId }) => {
+  const endpoint = 'cards';
+  // const [, axiosPrivate, cardId] = queryKey;
+
+  console.log('DELETE (Purchase Events Entry)');
+  const response = await axiosPrivate.put(`/${endpoint}/${cardId}`, {
+    in_mp: false,
+  });
+  return response.data;
+};
+
+export const ownersSwapper = async ({ queryKey }) => {
+  const purchaseEndpoint = 'marketplace';
+  const ownerSwapEndpoint = 'cards';
+  console.log('PUT (ALSO - Swap Owners - Marketplace)');
+  const [, , queryProps] = queryKey;
+  const { cardId, buyerId: ownerId } = queryProps;
+
+  const response = await axiosPrivate.put(
+    `/${ownerSwapEndpoint}/${purchaseEndpoint}/${cardId}`,
+    { ownerId }
+  );
+  return response.data;
+};
+
+export const getSoldCards = async ({ queryKey }) => {
+  const endpoint = 'marketplace';
+  const [, , sellerId] = queryKey;
+
+  console.log('GET (Player Sold Cards)');
+  const response = await axiosPrivate.get(`/${endpoint}/${sellerId}`);
+  return response.data;
 };
