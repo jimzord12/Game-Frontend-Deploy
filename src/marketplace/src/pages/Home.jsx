@@ -34,12 +34,6 @@ const Home = () => {
 
   return (
     <>
-      {console.log('Location2: ', location)}
-      {/* {console.log("Cards: ", cards)}
-      {console.log("Got Cards Success: ", isSuccessAllCards)}
-      {console.log("Are Cards Loading: ", isLoadingAllCards)}
-      {console.log("Is there an Error (Cards): ", isErrorAllCards)}
-      {console.log("Cards Error: ", allCardsError)} */}
       {isLoadingAllCards && (
         <div>
           <h4 className="text-[white]">Loading...</h4>
@@ -58,7 +52,8 @@ const Home = () => {
         <DisplayCards
           title="Cards For Sale"
           isLoadingAllCards={isLoadingAllCards}
-          cards={removeElementsFromArray(cards, playerCards)}
+          cards={cards}
+          // cards={removeElementsFromArray(cards, playerCards)} // Filters the player's cards, and only display the other players' cards
           playerAvatar={playerAvatar}
         />
       )}

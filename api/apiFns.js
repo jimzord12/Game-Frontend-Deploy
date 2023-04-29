@@ -178,6 +178,20 @@ export const purchaseCard = async ({ queryKey }) => {
   return response.data;
 };
 
+// #1 - Create Card
+export const sellCard = async (variables) => {
+  const endpoint = 'cards';
+  console.log('PUT (Selling Card MP) Variables: ', variables);
+  const { in_mp, cardId } = variables;
+
+  if (variables) {
+    const response = await axiosPrivate.put(`/${endpoint}/${cardId}`, {
+      in_mp,
+    });
+    return response.data;
+  }
+};
+
 export const deletePurchase = async ({ _axiosPrivate, cardId }) => {
   const endpoint = 'marketplace';
   // const [, axiosPrivate, sellerId] = queryKey;

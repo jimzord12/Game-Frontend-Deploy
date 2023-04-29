@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { classCard_V2 } from '../../models/Classes';
 import { removeObjectWithId } from './utils.js';
@@ -21,6 +22,7 @@ import {
   createCard_API,
   updateCardData,
   uploadCardStats,
+  sellCard,
 } from '../../../api/apiFns';
 
 //@Note: These images imports are all over the place! When refactoring, find a way to centralize them.
@@ -96,6 +98,7 @@ export default function CardGrid(props) {
     fetchedPlayer,
   } = usePlayerContext();
 
+  const navigate = useNavigate();
   // const [endPointForId, setEndPointForId] = useState(null);
   const [newCard_2, setNewCard_2] = useState(null); // Can't think another name for "newCard" 🤣
 
@@ -136,6 +139,26 @@ export default function CardGrid(props) {
     },
   });
 
+  const {
+    mutate: putCardForSale,
+    // data: newCardId,
+    // isSuccess: isSuccessNewCard,
+  } = useMutation({
+    mutationFn: sellCard,
+    // enabled: isSuccessNewCard,
+    onError: () => {
+      console.error(
+        '😫 Something went wrong!!! While changing the card.in_mp property'
+      );
+    },
+    onSuccess: (response) => {
+      console.log('Here is the response from MP: ', response);
+
+      // Invalidate and refetch
+      // queryClient.invalidateQueries({ queryKey: ['todos'] });
+    },
+  });
+
   useEffect(() => {
     console.log(
       'CardGrid: UseEffect() Number of Activated Cards: ',
@@ -164,7 +187,7 @@ export default function CardGrid(props) {
         });
       }
       setInventoryCards((prev) => [...prev, newCard]); // (3)
-      setForceRerender((prev) => !prev);
+      // setForceRerender((prev) => !prev);
       console.log('CardGrid::UseEffect() Complete New Card: ', newCard);
       alert('🥳 Amazing! You have Successfully Crafted a New Card!');
     }
@@ -316,7 +339,7 @@ export default function CardGrid(props) {
         _card.levelUp();
         const { level, id } = _card;
         updateCardData({ id, level });
-        setForceRerender((prev) => !prev);
+        // setForceRerender((prev) => !prev);
         alert('💪 Awesome! You just leveled Up your Card!');
       }
     } else {
@@ -445,7 +468,7 @@ export default function CardGrid(props) {
     setInventoryCards([...removeObjectWithId(inventoryCards, _card.id)]);
 
     // Force Re-render
-    setForceRerender((prev) => !prev);
+    // setForceRerender((prev) => !prev);
 
     // 3. Store Changes to Local Storage
 
@@ -460,7 +483,14 @@ export default function CardGrid(props) {
 
   const handleSellClick = (_card) => {
     // handle sell functionality here
-    setForceRerender((prev) => !prev);
+    // setForceRerender((prev) => !prev);
+    putCardForSale({
+      cardId: _card.id,
+      in_mp: true,
+    });
+    setInventoryCards([...removeObjectWithId(inventoryCards, _card.id)]);
+    setIsOpen(false);
+    setSelectedCardModal(null);
     console.log('Sell Button was clicked!');
     console.log('Active Card: ', activeCards);
     console.log('Inventory: ', inventoryCards);

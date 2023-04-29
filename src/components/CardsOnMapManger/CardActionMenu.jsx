@@ -292,7 +292,11 @@ const CardActionMenu = ({ card, cardTemplateId, close }) => {
     close();
   }
 
-  function handleClickSell() {}
+  function handleClickSell() {
+    updateCardData({ id: card.id, state: false, in_mp: true });
+    setActiveCards([...removeObjectWithId(activeCards, card.id)]);
+    close();
+  }
 
   function handleClickLevelUp() {
     if (cardTemplateId === 0) {
