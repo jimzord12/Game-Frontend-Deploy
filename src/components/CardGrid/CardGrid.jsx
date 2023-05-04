@@ -14,6 +14,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import './styles.css';
 import cardImages from '../../myAssets/cardImages/windTurbine.png';
 import vertDivider from '../../myAssets/vertical_section_divider.png';
+import { CustomInput } from '../SimpleCustom';
 
 import { apiEndpointLatestId } from '../../context/playerContext/constants';
 
@@ -101,6 +102,8 @@ export default function CardGrid(props) {
   const navigate = useNavigate();
   // const [endPointForId, setEndPointForId] = useState(null);
   const [newCard_2, setNewCard_2] = useState(null); // Can't think another name for "newCard" 🤣
+  const [showPriceInput, setShowPriceInput] = useState(false);
+  const [priceInput, setPriceInput] = useState('');
 
   const {
     mutate: createCard_DB,
@@ -484,16 +487,24 @@ export default function CardGrid(props) {
   const handleSellClick = (_card) => {
     // handle sell functionality here
     // setForceRerender((prev) => !prev);
-    putCardForSale({
-      cardId: _card.id,
-      in_mp: true,
-    });
-    setInventoryCards([...removeObjectWithId(inventoryCards, _card.id)]);
-    setIsOpen(false);
-    setSelectedCardModal(null);
-    console.log('Sell Button was clicked!');
-    console.log('Active Card: ', activeCards);
-    console.log('Inventory: ', inventoryCards);
+    if (showPriceInput) {
+      putCardForSale({
+        cardId: _card.id,
+        in_mp: true,
+        priceTag: priceInput,
+        state: false,
+      });
+      setInventoryCards([...removeObjectWithId(inventoryCards, _card.id)]);
+      setIsOpen(false);
+      setSelectedCardModal(null);
+      console.log('Sell Button was clicked!');
+      console.log('Active Card: ', activeCards);
+      console.log('Inventory: ', inventoryCards);
+      setShowPriceInput(false);
+      return;
+    } else {
+      setShowPriceInput(true);
+    }
 
     // setIsOpen(false);
   };
@@ -621,6 +632,7 @@ export default function CardGrid(props) {
                       >
                         Activate
                       </button>
+
                       <button
                         className="single-card-btn btn-sell"
                         style={{
@@ -633,10 +645,26 @@ export default function CardGrid(props) {
                         Sell
                       </button>
 
+                      {showPriceInput && (
+                        <div className="flex flex-col items-center w-full">
+                          <CustomInput
+                            label="Price Tag"
+                            placeHolder="Ex. 25000"
+                            Attribs={{
+                              onChange: (e) => {
+                                setPriceInput(e.target.value);
+                                console.log('Price Tag: ', e.target.value);
+                              },
+                            }}
+                          />
+                        </div>
+                      )}
+
                       {card.type !== 'Special Effect' && (
                         <button
                           className="single-card-btn btn-levelUp"
                           style={{
+                            marginTop: showPriceInput ? '10px' : '0px',
                             padding: '5px 10px',
                             borderRadius: '10px',
                             boxShadow: '1px 2px 2px 0px black',

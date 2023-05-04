@@ -182,11 +182,13 @@ export const purchaseCard = async ({ queryKey }) => {
 export const sellCard = async (variables) => {
   const endpoint = 'cards';
   console.log('PUT (Selling Card MP) Variables: ', variables);
-  const { in_mp, cardId } = variables;
+  const { in_mp, cardId, priceTag, state } = variables;
 
   if (variables) {
     const response = await axiosPrivate.put(`/${endpoint}/${cardId}`, {
       in_mp,
+      priceTag,
+      state,
     });
     return response.data;
   }
