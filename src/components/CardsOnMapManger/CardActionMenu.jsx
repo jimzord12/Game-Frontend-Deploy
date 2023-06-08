@@ -11,6 +11,8 @@ import { usePlayerContext } from '../../context/playerContext/PlayerContext';
 
 import { updateCardData, updatePlayerData } from '../../../api/apiFns';
 
+import { CustomInput } from '../SimpleCustom';
+
 // import { usePlayerContext } from '../../context/playerContext/PlayerContext';
 
 // TownHall
@@ -58,6 +60,8 @@ const CardActionMenu = ({ card, cardTemplateId, close }) => {
   const [menuStage, setMenuStage] = useState(0);
   const [townHallLevel, setTownHallLevel] = useState(townHallLevelRef.current);
   const [componentLevel, setComponentLevel] = useState(null);
+  const [showPriceInput, setShowPriceInput] = useState(false);
+  const [priceInput, setPriceInput] = useState('');
 
   const btns = {
     activate: {
@@ -292,7 +296,21 @@ const CardActionMenu = ({ card, cardTemplateId, close }) => {
     close();
   }
 
-  function handleClickSell() {}
+  function handleClickSell() {
+    if (showPriceInput) {
+      updateCardData({
+        id: card.id,
+        state: false,
+        in_mp: true,
+        priceTag: priceInput,
+      });
+      setActiveCards([...removeObjectWithId(activeCards, card.id)]);
+      close();
+      setShowPriceInput(false);
+    } else {
+      setShowPriceInput(true);
+    }
+  }
 
   function handleClickLevelUp() {
     if (cardTemplateId === 0) {
@@ -393,6 +411,20 @@ const CardActionMenu = ({ card, cardTemplateId, close }) => {
               );
             })}
           </div>
+          {showPriceInput && (
+            <div className="flex justify-center w-full gap-4">
+              <CustomInput
+                label="Price Tag"
+                placeHolder="Ex. 25000"
+                Attribs={{
+                  onChange: (e) => {
+                    setPriceInput(e.target.value);
+                    console.log('Price Tag: ', e.target.value);
+                  },
+                }}
+              />
+            </div>
+          )}
         </>
       )}
     </Suspense>

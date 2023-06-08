@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+// import { Link, useHistory } from 'react-router-dom';
 
 import ScoreRows from '../components/ScoreRows/ScoreRows';
 
@@ -14,18 +15,25 @@ import '../styles/Leaderboard.styles.css';
 // const usernameRegex = /([a-zA-Z][a-zA-Z0-9 ]{0,15})/;
 
 function Leaderboard() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [refreshData, setRefreshData] = useState(false);
 
   function handleRefresh() {
     setRefreshData((prev) => !prev);
   }
 
+  const handleLinkClick = () => {
+    history.goBack();
+  };
+
   return (
     <div className="root">
       <main>
         {/* <div id="canvas"></div> */}
         <h1 className="page-header">Leaderboard</h1>
+        <p className="goback-link" onClick={() => navigate(-1)}>
+          Go Back
+        </p>
         <div className="container-leaderboard">
           <div className="score-list">
             <div className="title-box">

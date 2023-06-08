@@ -103,6 +103,25 @@ main {
   color: var(--purple);
 }
 
+.goback-link {
+  display: inline;
+  padding: 4px 8px;
+  margin-left: 3%;
+  text-transform: uppercase;
+  border: 2px solid rgb(151, 20, 123);
+  border-radius: 6px;
+  font-size: 1.25rem;
+  transition: letter-spacing 0.75s;
+  color: rgb(151, 20, 123);
+}
+
+.goback-link:hover {
+  cursor: pointer;
+  letter-spacing: 3px;
+  color: #6aebd5;
+  background: rgb(121, 20, 99);
+}
+
 .sub-title {
   font-family: Tourney, sans-serif;
   font-size: 2.8rem;
@@ -140,7 +159,7 @@ main {
 }
 
 .score-list {
-  margin-top: 4rem;
+  margin-top: 2rem;
   width: 100%;
   max-height: fit-content;
   /* margin-right: 2rem; */
@@ -519,6 +538,10 @@ input[type='number']::-webkit-outer-spin-button {
   .page-header {
     font-size: 1.5rem;
     font-weight: 800;
+  }
+
+  .goback-link {
+    font-size: 1rem;
   }
 
   .sub-title {
