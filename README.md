@@ -180,9 +180,9 @@ Depending on one's preferences this might look more readable and easier to under
 <br />
 
 
-3. **The rest of vital code files **
+3. **The rest of the vital code files**
 <br />  &nbsp;&nbsp;
-There are 4 more files that believe are worth noting.
+There are 4 more files that I believe are worth mentioning.
 - **CardGrid.jsx** (./src/components/CardGrid/CardGrid.jsx)
 <br /> &nbsp;&nbsp;
 This one holds all the logic for all the possible options that appear inside the modal that opens when you click the "Craft" or "Inventory" Buttons.
@@ -196,7 +196,7 @@ This is responsible for the the logic that resides on the modal that opens when 
 - **TownHallActionMenu.jsx** (./src/components/CardOnMapManager/Buildings/TownHallActionMenu/TownHallActionMenu.jsx)
 <br /> &nbsp;&nbsp;
 Going deeper on the same directory we will discover the "TownHallActionMenu", this component hold the logic of the Default "Town Hall" Building. 
-Even though this just a specific case of the above compoent, due to the fact that it contains a ton of code as it must perform numerous calculation , 
+Even though this just a specific case of the above component, due to the fact that it contains a ton of code as it must perform numerous calculations, 
 I believe is worth checking out.
 <br />
 
