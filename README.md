@@ -7,7 +7,7 @@ You can check it out if you wish: [Game's Page](https://master--genera-game-test
 
 ## Technologies
 
-This Game is a browser-based, meaning that a browser program (ex. Chrome, Firefox, etc.) is required to play it.
+This Game is browser-based, meaning that a browser program (ex. Chrome, Firefox, etc.) is required to play it.
 <br />
 Therefore, for its development some of the most modern and popular Web Technologies were used.
 <br />
