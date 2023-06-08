@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { classCard_V2 } from '../../models/Classes';
 import { removeObjectWithId } from './utils.js';
@@ -13,6 +14,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import './styles.css';
 import cardImages from '../../myAssets/cardImages/windTurbine.png';
 import vertDivider from '../../myAssets/vertical_section_divider.png';
+import { CustomInput } from '../SimpleCustom';
 
 import { apiEndpointLatestId } from '../../context/playerContext/constants';
 
@@ -21,6 +23,7 @@ import {
   createCard_API,
   updateCardData,
   uploadCardStats,
+  sellCard,
 } from '../../../api/apiFns';
 
 //@Note: These images imports are all over the place! When refactoring, find a way to centralize them.
@@ -98,8 +101,11 @@ export default function CardGrid(props) {
     createNFTCard,
   } = usePlayerContext();
 
+  const navigate = useNavigate();
   // const [endPointForId, setEndPointForId] = useState(null);
   const [newCard_2, setNewCard_2] = useState(null); // Can't think another name for "newCard" 🤣
+  const [showPriceInput, setShowPriceInput] = useState(false);
+  const [priceInput, setPriceInput] = useState('');
 
   const {
     mutate: createCard_DB,
@@ -138,6 +144,26 @@ export default function CardGrid(props) {
     },
   });
 
+  const {
+    mutate: putCardForSale,
+    // data: newCardId,
+    // isSuccess: isSuccessNewCard,
+  } = useMutation({
+    mutationFn: sellCard,
+    // enabled: isSuccessNewCard,
+    onError: () => {
+      console.error(
+        '😫 Something went wrong!!! While changing the card.in_mp property'
+      );
+    },
+    onSuccess: (response) => {
+      console.log('Here is the response from MP: ', response);
+
+      // Invalidate and refetch
+      // queryClient.invalidateQueries({ queryKey: ['todos'] });
+    },
+  });
+
   useEffect(() => {
     console.log(
       'CardGrid: UseEffect() Number of Activated Cards: ',
@@ -169,7 +195,7 @@ export default function CardGrid(props) {
         });
       }
       setInventoryCards((prev) => [...prev, newCard]); // (3)
-      setForceRerender((prev) => !prev);
+      // setForceRerender((prev) => !prev);
       console.log('CardGrid::UseEffect() Complete New Card: ', newCard);
       alert('🥳 Amazing! You have Successfully Crafted a New Card!');
     }
@@ -323,7 +349,7 @@ export default function CardGrid(props) {
         _card.levelUp();
         const { level, id } = _card;
         updateCardData({ id, level });
-        setForceRerender((prev) => !prev);
+        // setForceRerender((prev) => !prev);
         alert('💪 Awesome! You just leveled Up your Card!');
       }
     } else {
@@ -452,7 +478,7 @@ export default function CardGrid(props) {
     setInventoryCards([...removeObjectWithId(inventoryCards, _card.id)]);
 
     // Force Re-render
-    setForceRerender((prev) => !prev);
+    // setForceRerender((prev) => !prev);
 
     // 3. Store Changes to Local Storage
 
@@ -467,10 +493,25 @@ export default function CardGrid(props) {
 
   const handleSellClick = (_card) => {
     // handle sell functionality here
-    setForceRerender((prev) => !prev);
-    console.log('Sell Button was clicked!');
-    console.log('Active Card: ', activeCards);
-    console.log('Inventory: ', inventoryCards);
+    // setForceRerender((prev) => !prev);
+    if (showPriceInput) {
+      putCardForSale({
+        cardId: _card.id,
+        in_mp: true,
+        priceTag: priceInput,
+        state: false,
+      });
+      setInventoryCards([...removeObjectWithId(inventoryCards, _card.id)]);
+      setIsOpen(false);
+      setSelectedCardModal(null);
+      console.log('Sell Button was clicked!');
+      console.log('Active Card: ', activeCards);
+      console.log('Inventory: ', inventoryCards);
+      setShowPriceInput(false);
+      return;
+    } else {
+      setShowPriceInput(true);
+    }
 
     // setIsOpen(false);
   };
@@ -598,6 +639,7 @@ export default function CardGrid(props) {
                       >
                         Activate
                       </button>
+
                       <button
                         className="single-card-btn btn-sell"
                         style={{
@@ -610,10 +652,26 @@ export default function CardGrid(props) {
                         Sell
                       </button>
 
+                      {showPriceInput && (
+                        <div className="flex flex-col items-center w-full">
+                          <CustomInput
+                            label="Price Tag"
+                            placeHolder="Ex. 25000"
+                            Attribs={{
+                              onChange: (e) => {
+                                setPriceInput(e.target.value);
+                                console.log('Price Tag: ', e.target.value);
+                              },
+                            }}
+                          />
+                        </div>
+                      )}
+
                       {card.type !== 'Special Effect' && (
                         <button
                           className="single-card-btn btn-levelUp"
                           style={{
+                            marginTop: showPriceInput ? '10px' : '0px',
                             padding: '5px 10px',
                             borderRadius: '10px',
                             boxShadow: '1px 2px 2px 0px black',

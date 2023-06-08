@@ -212,7 +212,7 @@ export function PlayerContextProvider({ children }) {
     isLoading: isPlayerLoading,
     isError: isPlayerError,
     error: playerError,
-    data,
+    refetch: refetchPlayerData,
   } = useQuery({
     queryKey: [apiEndpointPlayer, playerToFetch, axiosPrivate],
     // queryKey: [apiEndpointPlayer, playerToFetch, axiosPrivate],
@@ -1017,12 +1017,16 @@ export function PlayerContextProvider({ children }) {
     // cardsData.forEach((card, index) => {
     fetchedCards.forEach((card, index) => {
       console.log(`(${index + 1}) DB Card ===> `, card);
+      if (card.in_mp) return;
       const jsCard = new classCard_V2(
         card,
         testCardTemplateData[card.templateId]
       );
+      console.log('4444422244: ', jsCard);
       jsCard.image = NameToImgMapping[jsCard.img];
-      card.state ? activeCardsArr.push(jsCard) : inventoryCardsArr.push(jsCard);
+      card.state && !card.forSale
+        ? activeCardsArr.push(jsCard)
+        : inventoryCardsArr.push(jsCard);
 
       //@Note: Temporary Solution!!!
       // Init Special cards
@@ -1425,12 +1429,6 @@ export function PlayerContextProvider({ children }) {
       gameLoop();
       setWaitForGameLoop((prev) => !prev);
 
-      // const { activeCardsArr, inventoryCardsArr } = cardsInit();
-      // activeCardsArrRef.current = activeCardsArr;
-      // inventoryCardsArrRef.current = inventoryCardsArr;
-      // setActiveCards([...activeCardsArr]);
-      // setInventoryCards([...inventoryCardsArr]);
-
       // Set up the timer when the component mounts
       gameLoopTimer.current = setInterval(() => {
         gameLoopTickRef.current += 1;
@@ -1461,10 +1459,10 @@ export function PlayerContextProvider({ children }) {
       console.log('📣 Re-render Forcer: ActiveCards: ', activeCards);
       console.log('📣 Re-render Forcer: InventoryCards: ', inventoryCards);
       console.log(' 📣 Forcing Re-rendering... 📣 ');
-      // setActiveCards(activeCardsArrRef.current);
-      // setInventoryCards(inventoryCardsArrRef.current);
+      const { inventoryCardsArr } = cardsInit();
+      setInventoryCards(inventoryCardsArr);
     }
-  }, [forceRerender]);
+  }, [forceRerender, fetchedCards]);
 
   useEffect(() => {
     if (hasMetaMaskRun && hasProvider && wallet.chainId === 20231) {
@@ -1550,7 +1548,7 @@ export function PlayerContextProvider({ children }) {
         rewardingContract,
         awardPoints,
         createNFTCard,
-
+        refetchPlayerData,
         // forceRerenderChild,
         // animationTrackingRef,
       }}

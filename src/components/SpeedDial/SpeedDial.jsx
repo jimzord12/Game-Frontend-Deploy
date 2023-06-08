@@ -75,6 +75,13 @@ export default function ControlledOpenSpeedDial({
     } else {
       console.log(actionName);
     }
+
+    if (actionName === 'Marketplace') {
+      // cb(true);
+      navigate('/marketplace');
+    } else {
+      console.log(actionName);
+    }
   };
   //   const handleOpen = () => setOpen(true);
   //   const handleClose = () =>

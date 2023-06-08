@@ -32,12 +32,7 @@ export default function GameBtn({ text, action, callback }) {
     }
 
     if (actionName === 'Marketplace') {
-      setCatchUp(true);
-      setFakeDate(11 * hour);
-      // setTestingMode((prev) => !prev);
-      setForceRerender((prev) => !prev);
-      // dispatch({ type: 'toggleboostMode' });
-      // navigate('/battleground');
+      navigate('/marketplace');
     } else {
       console.log(actionName);
     }
