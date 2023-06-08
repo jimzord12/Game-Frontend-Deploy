@@ -108,34 +108,49 @@ In turn, this function returns the desired contract instace.
 <br />
 <br />
 Let's see an example to better understand how it works.
+<br />
+<br />
 
 ```javascript
-import React, { useState, useEffect} from from 'react';
-// Import the hook
+import React, { useState, useEffect } from from 'react';
+// 0. Import useMetaMask hook, this one give us the user's provider among other things
+import { useMetaMask } from '../useMetaMask.jsx';
+// 1. Import the hook
 import useContract from '../../hooks/useContract.jsx';
+// 2. Import the contract details
+import {
+  contractAddress,
+  contractABI,
+} from '../../web3/constants/index.js';
 
-// Create a state variable to store the contract
+// 3. Create a state variable to store the contract
 const [contract, setContract] = useState(null);
 
-// call it, this is how all React hooks work
+// 4. We will explain these variables later
+const { wallet, hasProvider, hasMetaMaskRun, provider } = useMetaMask();
+
+// 5.1 call it, this is how all React hooks work AND
+// 5.2 provide the contract details as args
 const { initialize, isLoading } = useContract(
     provider,
-    contractRewardingAddress,
-    RewardingABI
+    contractAddress,
+    contractABI
   );
   
-// Probaly you want to use the "initialize" function inside a useEffect hook like this
+// 6. Probaly you want to use the "initialize" function inside a useEffect hook like this
 useEffect(() => {
     /* 
-    * if wallet detection code has run AND 
-    * wallet is connected AND
-    * wallet is on the correct network
+    * if wallet detection code has finished running (hasMetaMaskRun) AND 
+    * wallet is connected to the site (hasProvider) AND
+    * wallet is on the correct network (wallet.chainId === 12345)
     */
-    if (hasMetaMaskRun && hasProvider && wallet.chainId === 20231) {
+    if (hasMetaMaskRun && hasProvider && wallet.chainId === 12345) {
       (async () => {
         try {
           console.log('Initializing Rewarding Contract Instance...');
+          // 7.1 Initializing the contract and also waiting for it to finish
           const _contract = await initialize();
+          // 7.2 Once it done, store it to the state variable
           setContract(_contract);
           console.log('✅ Contract Instance Completed!');
         } catch (error) {
@@ -143,13 +158,6 @@ useEffect(() => {
         }
       })(); // This weird syntax is called IIFE (https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
 ```
-
-    - If there is a crypto wallet installed 
-    - The wallet information (address, chainId, balance)
-    - If the context has finished executing its code (used to control the app's code execution flow)
-    - The "Connect Wallet" functionality
-    - The "Switch Network" functionality
-    - The "Add Network" functionality
     
     
       
