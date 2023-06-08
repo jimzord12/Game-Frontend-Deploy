@@ -106,3 +106,5 @@ This context provides the following functionality for the rest of the app to con
       - New Player's Stats Initiation
       - The control of the sequence of the 4 steps required to load the app
       - The Creation of the 2 Smart Contract instances (created by ethers.js) to link the game with the blockchain
+      
+      
