@@ -1,7 +1,7 @@
 # Game-Frontend-Deploy
 
 GENERA Project: The Online Multiplayer Browser-based Web3 Game Frontend (UI - Source Code)
-
+You may give it try: [Game's Page](https://master--genera-game-testing.netlify.app/)
 ## Technologies
 
 This Game is browser-based, meaning that a browser program (ex. Chrome, Firefox, etc.) is required to play it.
@@ -63,7 +63,7 @@ To increase engagement, a competitive element was inserted. Only the top 100 pla
 
 ## Dev Space 👨‍💻
 Following are some of the most important files in the project's directory.
-1. **PlayerContext** (./src/context/playerContext/PlayerContext.jsx)
+1. **PlayerContext.jsx** (./src/context/playerContext/PlayerContext.jsx)
 <br />  &nbsp;&nbsp;
 In this file is where the most vital piece of code for any game resides, **The Game Loop**.
     - The Game Loop, is responsible for calculating the:
@@ -92,19 +92,18 @@ This context provides the following functionality for the rest of the app to con
     - The "Connect Wallet" functionality
     - The "Switch Network" functionality
     - The "Add Network" functionality
+    
+- **useContract.jsx** (./src/hooks/useContract.jsx)
+<br /> &nbsp;&nbsp;
+This context provides the following functionality for the rest of the app to consume:
 
-<br />  &nbsp;&nbsp;
-    - The Game Loop, is responsible for calculating the:
-      - Player's stats
-      - Gathering rates
-      - Special effects' boosts & timers
-      - Performs value checking (a simple anti-cheat system)
-      - Buildings' and REGs' maintance costs
-      - Update the Database, to keep the UI and the Database in sync
-      
-   Other important porcesses that take place here are:
-      - New Player's Stats Initiation
-      - The control of the sequence of the 4 steps required to load the app
-      - The Creation of the 2 Smart Contract instances (created by ethers.js) to link the game with the blockchain
+    - If there is a crypto wallet installed 
+    - The wallet information (address, chainId, balance)
+    - If the context has finished executing its code (used to control the app's code execution flow)
+    - The "Connect Wallet" functionality
+    - The "Switch Network" functionality
+    - The "Add Network" functionality
+    
+    
       
       
