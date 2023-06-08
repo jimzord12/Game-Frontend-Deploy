@@ -17,6 +17,9 @@ import { Player } from '@lottiefiles/react-lottie-player';
 // import axiosPrivate from '../../../api/api.js';
 import useAuth from '../../hooks/useAuth.jsx';
 import useAxiosPrivate from '../../hooks/useAxiosPrivate.jsx';
+import { useMetaMask } from '../useMetaMask.jsx';
+import useContract from '../../hooks/useContract.jsx';
+import { useGameContract } from '../../hooks/useGameContract.jsx';
 
 import {
   getPlayer,
@@ -88,6 +91,10 @@ import testCardData from './testCardData_Empty.json';
 import testCardTemplateData from './testCardTemplateData.json';
 import { dummyInvCards, dummyCraftCards } from './testCardData.js';
 
+import {
+  contractRewardingAddress,
+  RewardingABI,
+} from '../../web3/rewardingTool/constants/index.js';
 // import { Loading } from '../../pages/index.js';
 
 const PlayerContext = createContext();
@@ -117,6 +124,18 @@ export function PlayerContextProvider({ children }) {
     maintenanceRef,
   } = useGameVars();
 
+  // Blockchain Staff
+  const { wallet, hasProvider, hasMetaMaskRun, provider } = useMetaMask();
+  const { initialize, isLoading } = useContract(
+    provider,
+    contractRewardingAddress,
+    RewardingABI
+  );
+  const { initialize: gameContractInit, isLoading: gameContractLoading } =
+    useGameContract();
+
+  const [rewardingContract, setRewardingContract] = useState(null);
+  const [gameContract, setGameContract] = useState(null);
   // Data Holding State
   // 1 - Data to Fetch
   const [playerToFetch, setPlayerToFetch] = useState(null);
@@ -170,118 +189,23 @@ export function PlayerContextProvider({ children }) {
         return state;
     }
   }
-  // 🧪 END - TESTING GROUNDS 🧪
-  /*
-  // 🏹 The Game's Refs 🏹
-  // Internal Flags
-  const hasUseEffectRun = useRef(false);
-  const gameLoopTimer = useRef(null);
-  const gameLoopTickRef = useRef(0);
 
-  // Cards Refs
-  const inventoryCardsArrRef = useRef([]);
-  const activeCardsArrRef = useRef([]);
+  // Blockchain: Smart Contract Functions
+  async function awardPoints(type) {
+    try {
+      rewardingContract.addPoints('game', type);
+    } catch (error) {
+      console.error('💎 Custom Rewarding Contract error: ', error);
+    }
+  }
 
-  // Player's Non-Material Resources (Top-Left Bar)
-  const nonMaterialResourcesRef = useRef({
-    population: null,
-    rank: null,
-  });
-
-  // Player's Material Resources (Top-Left Bar)
-  const materialResourcesRef = useRef({
-    gold: null,
-    concrete: null,
-    metals: null,
-    crystals: null,
-  });
-
-  // Multiplier's Used for calculating the produced rates (ex. imcome: privateSector * goldMultiplier)
-  const multipliersRef = useRef({
-    goldMultiplier: null,
-    concreteMultiplier: null,
-    metalsMultiplier: null,
-    crystalsMultiplier: null,
-  });
-
-  // Rates
-  const gatheringRatesRef = useRef({
-    goldGathRate: null,
-    popGrowthRate: null,
-    concreteGathRate: null,
-    metalsGathRate: null,
-    crystalsGathRate: null,
-  });
-
-  // Limitations
-  //  Space (Increased only by leveling Town Hall Building)
-  const maxLimitsRef = useRef({
-    housingSpace: null,
-    buildingsSpace: null,
-    generatorsSpace: null,
-  });
-
-  // Energy
-  const energyRef = useRef({
-    prodEnergy: null,
-    requiredEnergy: null,
-    delta: null,
-  });
-
-  // Living Standards - People Happyness
-  // Is used in PopGrowth Rate Calculations
-  const livingStandardsRef = useRef(null);
-
-  // TownHall (The Default Building)
-  const townHallLevelRef = useRef(null);
-  const townHallReqRef = useRef(null);
-
-  // Citizen Management - (Workers and Private Sector)
-  const workersRef = useRef({
-    privateSector: null,
-    concreteWorkers: null,
-    metalsWorkers: null,
-    crystalsWorkers: null,
-  });
-
-  // Holds the active effect from SE Cards
-  const specialEffectsRef = useRef({
-    isEffectActive: false,
-    endDate: 0,
-    goldGathRate: 1,
-    popGrowthRate: 1,
-    concreteGathRate: 1,
-    metalsGathRate: 1,
-    crystalsGathRate: 1,
-  });
-
-  const maintenanceRef = useRef({
-    gold: null,
-  });
-*/
-  // 🛒 React - Query Definitions 🛒
-
-  // Queries - Getting Data from Server/DB
-  // /*
-
-  // const {
-  //   isSuccess: gotPlayer,
-  //   isLoading: isPlayerLoading,
-  //   isError: isPlayerError,
-  //   error: playerError,
-  //   data,
-  // } = useQuery({
-  //   queryKey: [apiEndpointPlayer, playerToFetch, axiosPrivate],
-  //   // queryKey: [apiEndpointPlayer, playerToFetch, axiosPrivate],
-  //   queryFn: getPlayer,
-  //   // enabled: false,
-  //   enabled: !!playerToFetch,
-  //   onSuccess: (fetchedData) => {
-  //     setFetchedPlayer(fetchedData[0]);
-  //     setPlayerId(fetchedData[0]?.id);
-  //     console.log('SUCCESSFUL - PLAYER: ', fetchedData);
-  //   },
-  // });
+  async function createNFTCard(_cardId, _templateId, _inMP = false) {
+    try {
+      gameContract.createCard(_cardId, _templateId, _inMP);
+    } catch (error) {
+      console.error('💎 Custom Game Contract error: ', error);
+    }
+  }
 
   const {
     isSuccess: successfullyFetchedData,
@@ -1542,26 +1466,49 @@ export function PlayerContextProvider({ children }) {
     }
   }, [forceRerender]);
 
-  // > Updating Values useEffects <
-  // Town Hall Level
-  // useEffect(() => {
-  //   maxLimitsRef.current.housingSpace = calcSpacing(
-  //     townHallLevelRef.current,
-  //     'housing'
-  //   );
-  //   maxLimitsRef.current.buildingsSpace = calcSpacing(
-  //     townHallLevelRef.current,
-  //     'buildings'
-  //   );
-  //   maxLimitsRef.current.generatorsSpace = calcSpacing(
-  //     townHallLevelRef.current,
-  //     'generators'
-  //   );
+  useEffect(() => {
+    if (hasMetaMaskRun && hasProvider && wallet.chainId === 20231) {
+      (async () => {
+        // Rewarding Tool Contract
+        try {
+          console.log('4.1 Initializing Rewarding Contract Instance...');
+          const _rewardingContract = await initialize();
+          setRewardingContract(_rewardingContract);
+          console.log('4.2 ✅ Rewarding Contract Instance Completed!');
+        } catch (error) {
+          console.error('💎 From: (PlayerContext), useEffect: ', error);
+          console.log(
+            `📜 Global Context Provider: ${
+              hasProvider
+                ? 'User is on the wront network (Chain ID: ' +
+                  wallet.chainId +
+                  ')'
+                : 'User does not have wallet'
+            }`
+          );
+        }
 
-  //   console.log(' New Limits 1: ', maxLimitsRef.current.housingSpace);
-  //   console.log(' New Limits 2: ', maxLimitsRef.current.buildingsSpace);
-  //   console.log(' New Limits 3: ', maxLimitsRef.current.generatorsSpace);
-  // }, [townHallLevelRef.current]);
+        // Game Contract
+        try {
+          console.log('6.1 Initializing Game Contract Instance...');
+          const _gameContract = await gameContractInit();
+          setGameContract(_gameContract);
+          console.log('6.2 ✅ Game Contract Instance Completed!');
+        } catch (error) {
+          console.error('💎 From: (PlayerContext), useEffect: ', error);
+          console.log(
+            `📜 Global Context Provider: ${
+              hasProvider
+                ? 'User is on the wront network (Chain ID: ' +
+                  wallet.chainId +
+                  ')'
+                : 'User does not have wallet'
+            }`
+          );
+        }
+      })();
+    }
+  }, [hasMetaMaskRun, hasProvider, wallet.chainId]);
 
   return (
     <PlayerContext.Provider
@@ -1600,6 +1547,9 @@ export function PlayerContextProvider({ children }) {
         fetchedPlayer,
         updateCard,
         setAccessToken,
+        rewardingContract,
+        awardPoints,
+        createNFTCard,
 
         // forceRerenderChild,
         // animationTrackingRef,

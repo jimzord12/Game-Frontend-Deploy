@@ -7,7 +7,8 @@ import { ThemeProvider } from '@mui/material/styles';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { GlobalContextProvider } from './context';
 import { PlayerContextProvider } from './context/playerContext/PlayerContext';
-import { Web3ContextProvider } from './context/Web3Provider';
+// import { Web3ContextProvider } from './context/Web3Provider';
+import { MetaMaskContextProvider } from './context/useMetaMask';
 import { AuthProvider } from './context/AuthProvider';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -23,7 +24,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <QueryClientProvider client={queryClient}>
           <AuthProvider>
-            <Web3ContextProvider>
+            {/* <Web3ContextProvider> */}
+            <MetaMaskContextProvider>
               <GlobalContextProvider>
                 <PlayerContextProvider>
                   {/* <OnboardModal /> */}
@@ -37,7 +39,8 @@ function App() {
                   </Routes>
                 </PlayerContextProvider>
               </GlobalContextProvider>
-            </Web3ContextProvider>
+            </MetaMaskContextProvider>
+            {/* </Web3ContextProvider> */}
           </AuthProvider>
           <ReactQueryDevtools initialIsOpen />
         </QueryClientProvider>
