@@ -2,7 +2,9 @@
 
 GENERA Project: The Online Multiplayer Browser-based Web3 Game Frontend (UI - Source Code)
 <br />
-You may give it try: [Game's Page](https://master--genera-game-testing.netlify.app/)
+You can check it out if you wish: [Game's Page](https://master--genera-game-testing.netlify.app/)
+<br />
+
 ## Technologies
 
 This Game is browser-based, meaning that a browser program (ex. Chrome, Firefox, etc.) is required to play it.
