@@ -149,15 +149,36 @@ useEffect(() => {
           console.log('Initializing Rewarding Contract Instance...');
           // 7.1 Initializing the contract and also waiting for it to finish
           const _contract = await initialize();
-          // 7.2 Once it done, store it to the state variable
+          // 7.2 Once its done, store it to the state variable
           setContract(_contract);
           console.log('✅ Contract Instance Completed!');
         } catch (error) {
           console.error('❌ From: (PlayerContext), useEffect: ', error);
         }
       })(); // This weird syntax is called IIFE (https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+      // Now you have a contract variable and call its functions like methods. 
+      // If the contract has a named "viewAllYourCard"
+      // You can call it like this: await contract.viewAllYourCard()
+      // Remember that all contract function calls are ASYNC!
+      // So don't forget to add the "await" keyword if you need the returned data from the contract
+      // before your code continues it's execution
 ```
-    
+<br />
+
+- **useGaneContract.jsx** (./src/hooks/useGameContract.jsx)
+<br /> &nbsp;&nbsp;
+Unlike the more generic useContract.jsx hook I just showed, this one is specifically for the GameManager Smart Contract.
+<br />
+The reason I didn't re-use the useContract.jsx was basically to present another possible way of achieving the some result.
+<br />
+The code is almost the same, the critical difference is that you can initialize this hook without providing args to it like this:
+
+```javascript
+  const { initialize: gameContractInit, isLoading: gameContractLoading } = useGameContract();
+```
+<br />
+Depending on one's preferences this might look more readable and easier to understand.
+<br />
     
       
       
