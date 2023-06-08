@@ -1,3 +1,14 @@
-import secondsToDaysHrsMinSec from "./secondsToDaysHrsMinSec";
+import secondsToDaysHrsMinSec from './secondsToDaysHrsMinSec';
 
-export { secondsToDaysHrsMinSec };
+import {
+  formatBalance,
+  formatChainAsNum,
+  formatAddress,
+} from './web3essentials';
+
+export {
+  secondsToDaysHrsMinSec,
+  formatBalance,
+  formatChainAsNum,
+  formatAddress,
+};

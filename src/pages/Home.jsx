@@ -5,6 +5,8 @@ import { CustomButton, CustomInput } from '../components/SimpleCustom';
 import PageHOC from '../components/PageHOC';
 import useAuth from '../hooks/useAuth';
 import useInput from '../hooks/useInput';
+// import useRewardingContract from '../hooks/useRewardingContract';
+import { useMetaMask } from '../context/useMetaMask';
 
 import { useMediaQuery } from '@mui/material';
 import axios from '../../api/api';
@@ -23,7 +25,10 @@ export function Home() {
   const [initComplete, setInitComplete] = useState(false);
   const navigate = useNavigate();
   const { setAuth, auth } = useAuth();
-  const { setPlayerToFetch, setAccessToken } = usePlayerContext();
+  const { setPlayerToFetch, setAccessToken, createPlayer } = usePlayerContext();
+
+  const { connectMetaMask } = useMetaMask();
+  // const { initialize, isLoading: isContractLoading } = useRewardingContract();
 
   const [user, resetUser, userAttribs] = useInput('user', '');
   const [wallet, resetWallet, walletAttribs] = useInput('wallet', '');
@@ -76,6 +81,7 @@ export function Home() {
   };
 
   const handlePlayerCreate = async (e) => {
+    // Express Server
     if (!usernameRegex.test(user)) {
       setErrMsg(
         'The player name must begin with a letter, not exceed 16 characters and can contain only letters, numbers and spaces'
@@ -101,30 +107,13 @@ export function Home() {
         }
       );
       if (response?.status === 201) {
-        console.log(response);
+        console.log('(Home Page: Express Response: ', response);
         resetUser(); // Cleaning the memory for security
         resetWallet(); // Cleaning the memory for security
         setSuccessMsg(
           `Your Account has been created! 🥳 Login to start playing!`
         );
       }
-      // const accessToken = response?.data?.aT;
-      // const roles = response?.data?.roles;
-      // console.log('🤩 Got A-JWT from Web Server! Yay! 🤩');
-      // console.log('Access Token: ', accessToken);
-      // setAuth((prev) => {
-      //   return { user, accessToken, ...prev };
-      // });
-
-      // setPwd(''); // Cleaning the memory for security
-      // if (!isNewPlayer) {
-      //   setInitComplete(true);
-      //   setPlayerToFetch(user);
-      // } else {
-      //   // Clicked the Create Player button
-      // if (response.statusText === 'OK') setErrMsg('Username already exists!');
-      // console.log('RESPONSE: ', response);
-      // }
 
       // Error Handling, based on the error
     } catch (err) {
@@ -141,6 +130,13 @@ export function Home() {
       } else {
         setErrMsg('Login Failed');
       }
+    }
+
+    // Blockchain
+    try {
+      await createPlayer(user);
+    } catch (err) {
+      console.log(err);
     }
   };
 
@@ -257,6 +253,12 @@ export function Home() {
         <CustomButton
           title="Create Player"
           handleClick={handlePlayerCreate}
+          restStyles="mt-6 w-fit"
+        />
+
+        <CustomButton
+          title="Connect Wallet"
+          handleClick={connectMetaMask}
           restStyles="mt-6 w-fit"
         />
       </div>

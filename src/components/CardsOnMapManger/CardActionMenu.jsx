@@ -55,6 +55,7 @@ const CardActionMenu = ({ card, cardTemplateId, close }) => {
     inventoryCards,
     setForceRerender,
     maintenanceRef,
+    awardPoints,
   } = usePlayerContext();
 
   const [menuStage, setMenuStage] = useState(0);
@@ -136,12 +137,6 @@ const CardActionMenu = ({ card, cardTemplateId, close }) => {
     },
   };
 
-  // const { playerContextInitialized } = usePlayerContext();
-
-  // useEffect(
-  //   () => console.log('IS PLayer Contenxt: ', playerContextInitialized),
-  //   [playerContextInitialized]
-  // );
   function removeObjectWithId(arr, id) {
     return arr.filter((obj) => obj.id !== id);
   }
@@ -175,6 +170,13 @@ const CardActionMenu = ({ card, cardTemplateId, close }) => {
         concrete: 3500,
         metals: 1750,
         crystals: 900,
+      };
+    if (currentLevel === 5)
+      return {
+        gold: 'max',
+        concrete: 'max',
+        metals: 'max',
+        crystals: 'max',
       };
   }
 
@@ -215,6 +217,7 @@ const CardActionMenu = ({ card, cardTemplateId, close }) => {
           'CardActionMenu: Current TownHall Level: ',
           townHallLevelRef.current
         );
+        awardPoints('game', 'TownHallUpgrade'); // Smart Contract Call!
         setTownHallLevel(townHallLevelRef.current);
         alert('💪 Awesome! You just leveled Up your Card!');
       } else {
