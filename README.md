@@ -1,6 +1,7 @@
 # Game-Frontend-Deploy
 
 GENERA Project: The Online Multiplayer Browser-based Web3 Game Frontend (UI - Source Code)
+<br />
 You may give it try: [Game's Page](https://master--genera-game-testing.netlify.app/)
 ## Technologies
 
