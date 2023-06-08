@@ -98,7 +98,51 @@ This context provides the following functionality for the rest of the app to con
     
 - **useContract.jsx** (./src/hooks/useContract.jsx)
 <br /> &nbsp;&nbsp;
-This context provides the following functionality for the rest of the app to consume:
+This custom react hook simplifies the process of creating a Contract Instance through the ethers.js lib.
+<br />
+By providing the deployed contract's information (address and ABI) and the user's crypto wallet (provider)
+<br />
+It return a a function that can be used to initialize the contract's instace. 
+<br />
+In turn, this function returns the desired contract instace.
+<br />
+<br />
+Let's see an example to better understand how it works.
+
+```javascript
+import React, { useState, useEffect} from from 'react';
+// Import the hook
+import useContract from '../../hooks/useContract.jsx';
+
+// Create a state variable to store the contract
+const [contract, setContract] = useState(null);
+
+// call it, this is how all React hooks work
+const { initialize, isLoading } = useContract(
+    provider,
+    contractRewardingAddress,
+    RewardingABI
+  );
+  
+// Probaly you want to use the "initialize" function inside a useEffect hook like this
+useEffect(() => {
+    /* 
+    * if wallet detection code has run AND 
+    * wallet is connected AND
+    * wallet is on the correct network
+    */
+    if (hasMetaMaskRun && hasProvider && wallet.chainId === 20231) {
+      (async () => {
+        try {
+          console.log('Initializing Rewarding Contract Instance...');
+          const _contract = await initialize();
+          setContract(_contract);
+          console.log('✅ Contract Instance Completed!');
+        } catch (error) {
+          console.error('❌ From: (PlayerContext), useEffect: ', error);
+        }
+      })(); // This weird syntax is called IIFE (https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+```
 
     - If there is a crypto wallet installed 
     - The wallet information (address, chainId, balance)
