@@ -94,6 +94,8 @@ export default function CardGrid(props) {
     specialEffectsRef,
     maxLimitsRef,
     fetchedPlayer,
+    awardPoints,
+    createNFTCard,
   } = usePlayerContext();
 
   // const [endPointForId, setEndPointForId] = useState(null);
@@ -150,6 +152,9 @@ export default function CardGrid(props) {
       const newCard = newCard_2;
       newCard.image = NameToImgMapping[newCard.img];
       newCard.id = newCardId.id;
+
+      createNFTCard(newCard.id, newCard.templateId); // Blockchain: Game Smart Contract
+
       if (cardsWithStats.includes(newCard.templateId)) {
         createCardStats_DB({
           cardId: newCard.id,
@@ -233,6 +238,8 @@ export default function CardGrid(props) {
       templateId: Number(selectedCardModal),
       creator: _creator,
     };
+
+    awardPoints('cardCreation');
 
     console.log('CardGrid, Create Card: ', selectedCardModal);
     console.log('CardGrid, Create Card Data: ', cardData);
