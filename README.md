@@ -165,10 +165,10 @@ useEffect(() => {
 ```
 <br />
 
-- **useGaneContract.jsx** (./src/hooks/useGameContract.jsx)
+- **useGameContract.jsx** (./src/hooks/useGameContract.jsx)
 <br /> &nbsp;&nbsp;
 Unlike the more generic useContract.jsx hook I just showed, this one is specifically for the GameManager Smart Contract.
-<br />
+
 The reason I didn't re-use the useContract.jsx was basically to present another possible way of achieving the some result.
 <br />
 The code is almost the same, the critical difference is that you can initialize this hook without providing args to it like this:
@@ -176,9 +176,31 @@ The code is almost the same, the critical difference is that you can initialize 
 ```javascript
   const { initialize: gameContractInit, isLoading: gameContractLoading } = useGameContract();
 ```
-<br />
 Depending on one's preferences this might look more readable and easier to understand.
 <br />
-    
-      
-      
+
+
+3. **The rest of vital code files **
+<br />  &nbsp;&nbsp;
+There are 4 more files that believe are worth noting.
+- **CardGrid.jsx** (./src/components/CardGrid/CardGrid.jsx)
+<br /> &nbsp;&nbsp;
+This one holds all the logic for all the possible options that appear inside the modal that opens when you click the "Craft" or "Inventory" Buttons.
+<br />
+
+- **CardActionMenu.jsx** (./src/components/CardOnMapManager/CardActionMenu.jsx)
+<br /> &nbsp;&nbsp;
+This is responsible for the the logic that resides on the modal that opens when you click an activated Card which is rendered on the Town Map.
+<br />
+
+- **TownHallActionMenu.jsx** (./src/components/CardOnMapManager/Buildings/TownHallActionMenu/TownHallActionMenu.jsx)
+<br /> &nbsp;&nbsp;
+Going deeper on the same directory we will discover the "TownHallActionMenu", this component hold the logic of the Default "Town Hall" Building. 
+Even though this just a specific case of the above compoent, due to the fact that it contains a ton of code as it must perform numerous calculation , 
+I believe is worth checking out.
+<br />
+
+- **Marketplace** (./src/marketplace)
+<br /> &nbsp;&nbsp;
+The last one I wish to mentions is the Marketplace. The intersting aspect about this one is the fact that it is literally a whole application embedded inside the Game application. Something like a nested app.
+<br />
