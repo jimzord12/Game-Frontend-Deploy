@@ -147,7 +147,7 @@ useEffect(() => {
     if (hasMetaMaskRun && hasProvider && wallet.chainId === 12345) {
       (async () => {
         try {
-          console.log('Initializing Rewarding Contract Instance...');
+          console.log('Initializing Contract Instance...');
           // 7.1 Initializing the contract and also waiting for it to finish
           const _contract = await initialize();
           // 7.2 Once its done, store it to the state variable
