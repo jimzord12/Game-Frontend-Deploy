@@ -154,15 +154,17 @@ useEffect(() => {
           setContract(_contract);
           console.log('✅ Contract Instance Completed!');
         } catch (error) {
-          console.error('❌ From: (PlayerContext), useEffect: ', error);
+          console.error('❌ From: (__Your File's Name__), useEffect: ', error);
         }
       })(); // This weird syntax is called IIFE (https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
-      // Now you have a contract variable and call its functions like methods. 
-      // If the contract has a named "viewAllYourCard"
-      // You can call it like this: await contract.viewAllYourCard()
-      // Remember that all contract function calls are ASYNC!
-      // So don't forget to add the "await" keyword if you need the returned data from the contract
-      // before your code continues it's execution
+ }
+// Now you have a contract variable and you can call its functions like methods in an object. 
+// If the contract has a function named "viewAllYourCards"
+// You can call it like this: 
+const userCards = await contract.viewAllYourCards()
+// Remember that all contract function calls are ASYNC!
+// So don't forget to add the "await" keyword if you need the returned data from the contract
+// before your code continues it's execution
 ```
 <br />
 
