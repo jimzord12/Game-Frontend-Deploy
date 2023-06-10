@@ -89,9 +89,9 @@ There are 4 places in this project related with the Web3 Cosmos (Blockchain)
 <br /> &nbsp;&nbsp;
 This context provides the following functionality for the rest of the app to consume:
 
-    - If there is a crypto wallet installed 
-    - The wallet information (address, chainId, balance)
-    - If the context has finished executing its code (used to control the app's code execution flow)
+    - The ability to check: if there is a crypto wallet installed 
+    - The ability to check: If the context has finished executing its code (used to control the app's code execution flow)
+    - The user's wallet information (account address, chainId, balance)
     - The "Connect Wallet" functionality
     - The "Switch Network" functionality
     - The "Add Network" functionality
