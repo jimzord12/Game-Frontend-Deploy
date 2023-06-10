@@ -102,8 +102,8 @@ This custom react hook simplifies the process of creating a Contract Instance th
 <br />
 By providing the deployed contract's information (address and ABI) and the user's crypto wallet (provider),
 <br />
-it returns a function that can be used to initialize the contract's instance. 
-In turn, this function returns the desired contract instace.
+The hook returns a function that can be used to initialize the contract's instance named "initialize". 
+In turn, this "initialize" function returns a Promise that resolves into the desired contract instance.
 <br />
 <br />
 Let's see an example to better understand how it works.
