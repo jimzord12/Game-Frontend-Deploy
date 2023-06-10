@@ -157,7 +157,8 @@ useEffect(() => {
           console.error("❌ From: (-Your File's Name-), useEffect: ", error);
         }
       })(); // This weird syntax is called IIFE (https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
- }
+    }
+}   
 // Now you have a contract variable and you can call its functions like methods in an object. 
 // If the contract has a function named "viewAllYourCards"
 // You can call it like this: 
