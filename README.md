@@ -102,7 +102,7 @@ This custom react hook simplifies the process of creating a Contract Instance th
 <br />
 By providing the deployed contract's information (address and ABI) and the user's crypto wallet (provider),
 <br />
-it returns a function that can be used to initialize the contract's instace. 
+it returns a function that can be used to initialize the contract's instance. 
 In turn, this function returns the desired contract instace.
 <br />
 <br />
