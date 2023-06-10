@@ -154,7 +154,7 @@ useEffect(() => {
           setContract(_contract);
           console.log('✅ Contract Instance Completed!');
         } catch (error) {
-          console.error('❌ From: (__Your File's Name__), useEffect: ', error);
+          console.error('❌ From: (-Your File's Name-), useEffect: ', error);
         }
       })(); // This weird syntax is called IIFE (https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
  }
