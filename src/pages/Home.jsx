@@ -97,6 +97,8 @@ export function Home() {
     }
     e.preventDefault();
     console.log('Home::Wallet: ', wallet);
+
+    // Express Server interaction
     try {
       const response = await axios.post(
         CREATE_PL_URL,
@@ -107,12 +109,20 @@ export function Home() {
         }
       );
       if (response?.status === 201) {
+        serverResponse = response;
         console.log('(Home Page: Express Response: ', response);
         resetUser(); // Cleaning the memory for security
         resetWallet(); // Cleaning the memory for security
         setSuccessMsg(
           `Your Account has been created! 🥳 Login to start playing!`
         );
+      }
+
+      // Blockchain interaction
+      try {
+        await createPlayer(user, response.data.insertId);
+      } catch (err) {
+        console.log(err);
       }
 
       // Error Handling, based on the error
@@ -130,13 +140,6 @@ export function Home() {
       } else {
         setErrMsg('Login Failed');
       }
-    }
-
-    // Blockchain
-    try {
-      await createPlayer(user);
-    } catch (err) {
-      console.log(err);
     }
   };
 

@@ -203,7 +203,18 @@ export function PlayerContextProvider({ children }) {
     try {
       gameContract.createCard(_cardId, _templateId, _inMP);
     } catch (error) {
-      console.error('💎 Custom Game Contract error: ', error);
+      console.error('💎 Custom Game Contract | (NFT Creation) error: ', error);
+    }
+  }
+
+  async function createPlayer(_name, _id) {
+    try {
+      gameContract.createPlayer(_name, _id);
+    } catch (error) {
+      console.error(
+        '💎 Custom Game Contract | (Player Creation) error: ',
+        error
+      );
     }
   }
 
