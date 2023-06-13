@@ -109,7 +109,6 @@ export function Home() {
         }
       );
       if (response?.status === 201) {
-        serverResponse = response;
         console.log('(Home Page: Express Response: ', response);
         resetUser(); // Cleaning the memory for security
         resetWallet(); // Cleaning the memory for security
